@@ -3,24 +3,26 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --color-brand-purple: #530172;
+  --color-brand-purple-2: #810aa9;
+  --color-brand-green: #00cb97;
+  --color-brand-orange: #f58729;
+  --color-brand-lilac: #f8f3fc;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-quicksand);
+  --color-brand-purple: var(--color-brand-purple);
+  --color-brand-purple-2: var(--color-brand-purple-2);
+  --color-brand-green: var(--color-brand-green);
+  --color-brand-orange: var(--color-brand-orange);
+  --color-brand-lilac: var(--color-brand-lilac);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), sans-serif;
 }
