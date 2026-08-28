@@ -26,7 +26,7 @@ export function CTA() {
         </p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <PrimaryButton href="#call">Book a free scope call</PrimaryButton>
-          <OutlineButton href="#prices" dark>
+          <OutlineButton href="/prices" dark>
             See services and prices
           </OutlineButton>
         </div>
