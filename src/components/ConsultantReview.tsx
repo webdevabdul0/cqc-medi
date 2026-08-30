@@ -4,7 +4,7 @@ import { ScrollReveal } from "./ScrollReveal";
 
 export function ConsultantReview() {
   return (
-    <section className="bg-brand-lilac py-20 lg:py-28">
+    <section className="bg-brand-lilac py-[100px] lg:py-[132px]">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-[100px]">
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-10">
           <ScrollReveal>

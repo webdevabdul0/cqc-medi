@@ -26,7 +26,7 @@ const CARDS = [
 
 export function HowWeWorkWithPeople() {
   return (
-    <section className="bg-gradient-to-r from-brand-purple via-brand-purple-2 to-brand-purple py-20 lg:py-28">
+    <section className="bg-gradient-to-r from-brand-purple via-brand-purple-2 to-brand-purple pb-24 pt-20 lg:pb-[140px] lg:pt-28">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-[100px]">
         <ScrollReveal className="mx-auto max-w-[708px] text-center">
           <h2 className="text-3xl font-bold leading-[1.2] text-white sm:text-4xl">
@@ -37,16 +37,45 @@ export function HowWeWorkWithPeople() {
           </p>
         </ScrollReveal>
 
-        <div className="relative mt-14 hidden justify-center lg:flex">
+        <div className="relative mt-14 hidden flex-col items-center justify-center lg:flex">
           <Image src="/images/people-badge.svg" alt="" width={106} height={106} className="relative z-10" />
+          <div
+            className="h-6 w-[2px]"
+            style={{
+              backgroundImage:
+                "linear-gradient(180deg, #50BD96 0%, #00B2B9 27%, #F3D41F 50%, #F58729 74%, #EF5658 100%)",
+              maskImage:
+                "repeating-linear-gradient(180deg, black 0px, black 5px, transparent 5px, transparent 10px)",
+              WebkitMaskImage:
+                "repeating-linear-gradient(180deg, black 0px, black 5px, transparent 5px, transparent 10px)",
+            }}
+          />
         </div>
         <div className="relative mx-auto hidden h-[110px] max-w-[1160px] lg:block">
-          <div className="absolute left-0 right-0 top-0 border-t border-dashed border-white/30" />
+          <div
+            className="absolute left-1/2 top-0 h-[2px] w-screen -translate-x-1/2"
+            style={{
+              backgroundImage:
+                "linear-gradient(90deg, #50BD96 0%, #00B2B9 27%, #F3D41F 50%, #F58729 74%, #EF5658 100%)",
+              maskImage:
+                "repeating-linear-gradient(90deg, black 0px, black 5px, transparent 5px, transparent 10px)",
+              WebkitMaskImage:
+                "repeating-linear-gradient(90deg, black 0px, black 5px, transparent 5px, transparent 10px)",
+            }}
+          />
           {["12.5%", "37.5%", "62.5%", "87.5%"].map((left) => (
             <div
               key={left}
-              className="absolute top-0 h-full border-l border-dashed border-white/30"
-              style={{ left }}
+              className="absolute top-0 h-[110px] w-[2px]"
+              style={{
+                left,
+                backgroundImage:
+                  "linear-gradient(180deg, #50BD96 0%, #00B2B9 27%, #F3D41F 50%, #F58729 74%, #EF5658 100%)",
+                maskImage:
+                  "repeating-linear-gradient(180deg, black 0px, black 5px, transparent 5px, transparent 10px)",
+                WebkitMaskImage:
+                  "repeating-linear-gradient(180deg, black 0px, black 5px, transparent 5px, transparent 10px)",
+              }}
             />
           ))}
         </div>

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const NAV_LINKS = [
   { label: "Services", href: "#services" },
-  { label: "Sectors", href: "#sectors" },
+  { label: "Sectors", href: "/sectors" },
   { label: "Prices", href: "/prices" },
   { label: "Resources", href: "#resources" },
 ];
@@ -43,19 +43,21 @@ export function Header() {
           <Link href="/" className="shrink-0">
             <Image src="/images/logo.svg" alt="CQC MediSolutions" width={84} height={42} />
           </Link>
-          <nav className="hidden items-center gap-10 text-base font-medium text-white md:flex">
-            {NAV_LINKS.map((link) => (
-              <a key={link.label} href={link.href} className="hover:text-brand-green">
-                {link.label}
-              </a>
-            ))}
-          </nav>
-          <Link
-            href="#login"
-            className="rounded-xl bg-gradient-to-r from-[#f58729] to-[#ef5658] px-8 py-3.5 text-base font-bold text-[#fbfbfb] transition-opacity hover:opacity-90"
-          >
-            Login
-          </Link>
+          <div className="flex items-center gap-10">
+            <nav className="hidden items-center gap-10 text-base font-medium text-white md:flex">
+              {NAV_LINKS.map((link) => (
+                <a key={link.label} href={link.href} className="hover:text-brand-green">
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+            <Link
+              href="#login"
+              className="rounded-xl bg-gradient-to-r from-[#f58729] to-[#ef5658] px-8 py-3.5 text-base font-bold text-[#fbfbfb] transition-opacity hover:opacity-90"
+            >
+              Login
+            </Link>
+          </div>
         </div>
       </div>
     </header>

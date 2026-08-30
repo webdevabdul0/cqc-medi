@@ -43,7 +43,10 @@ export function Hero() {
   }, []);
 
   return (
-    <section ref={rootRef} className="bg-brand-purple pb-24 pt-16 lg:pb-32 lg:pt-24">
+    <section
+      ref={rootRef}
+      className="bg-gradient-to-r from-brand-purple to-brand-purple-2 pb-24 pt-16 lg:pb-32 lg:pt-24"
+    >
       <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-center gap-16 px-6 lg:grid-cols-2 lg:gap-10 lg:px-[100px]">
         <div className="max-w-[610px]">
           <h1

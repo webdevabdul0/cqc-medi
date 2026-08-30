@@ -42,13 +42,13 @@ const FEATURES = [
 
 export function FeatureGrid() {
   return (
-    <section className="bg-white py-20 lg:py-28">
+    <section className="bg-white pb-20 pt-8 lg:pb-28 lg:pt-10">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-[100px]">
         <ScrollRevealStagger className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {FEATURES.map((feature) => (
             <div
               key={feature.title}
-              className="flex flex-col gap-8 overflow-hidden rounded-[40px] border border-[#d8d8d8] bg-white p-8 sm:flex-row sm:items-center sm:p-10"
+              className="flex flex-col gap-6 overflow-hidden rounded-[40px] border border-[#d8d8d8] bg-white p-6 sm:flex-row sm:items-center sm:p-8"
             >
               <div className="flex-1">
                 <div className="relative size-10">
@@ -67,7 +67,7 @@ export function FeatureGrid() {
                   {feature.body}
                 </p>
               </div>
-              <div className="relative h-[240px] w-full shrink-0 overflow-hidden rounded-[30px] sm:h-[280px] sm:w-[240px]">
+              <div className="relative aspect-[240/354] h-auto w-full shrink-0 overflow-hidden rounded-[30px] sm:h-[354px] sm:w-[240px]">
                 <Image
                   src={feature.photo}
                   alt=""

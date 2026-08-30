@@ -2,7 +2,11 @@ import Image from "next/image";
 import { OutlineButton, PrimaryButton } from "./Buttons";
 import { ScrollReveal } from "./ScrollReveal";
 
-export function CTA() {
+export function CTA({
+  heading = "Talk to the consultant who’d handle your file.",
+}: {
+  heading?: string;
+}) {
   return (
     <section className="relative overflow-hidden bg-white pb-32 pt-20 lg:pb-44 lg:pt-28">
       <div className="pointer-events-none absolute inset-x-0 top-[200px] hidden lg:block">
@@ -17,7 +21,7 @@ export function CTA() {
       </div>
       <ScrollReveal className="relative mx-auto max-w-[1440px] px-6 text-center lg:px-[100px]">
         <h2 className="mx-auto max-w-[760px] text-3xl font-bold leading-[1.2] text-brand-purple sm:text-4xl lg:text-5xl">
-          Talk to the consultant who&apos;d handle your file.
+          {heading}
         </h2>
         <p className="mx-auto mt-6 max-w-[652px] text-base leading-[1.3] text-black/80 sm:text-lg">
           Fifteen minutes will tell you what you need to register for, what the

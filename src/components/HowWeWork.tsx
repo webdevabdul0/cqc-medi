@@ -55,8 +55,8 @@ export function HowWeWork() {
               className="h-auto w-[150px]"
             />
           </div>
-          <div className="relative rounded-[40px] bg-white px-8 pb-6 pt-12 sm:px-16 sm:pt-14 lg:px-24">
-            <ScrollReveal className="mx-auto max-w-[620px] border-b border-black/10 pb-10 text-center">
+          <div className="relative rounded-[40px] bg-white px-8 pb-16 pt-12 sm:px-16 sm:pb-20 sm:pt-14 lg:px-24">
+            <ScrollReveal className="mx-auto max-w-[620px] pb-10 text-center">
               <h2 className="text-3xl font-bold leading-[1.2] text-brand-purple sm:text-4xl">
                 How we work
               </h2>
@@ -78,22 +78,26 @@ export function HowWeWork() {
                   i < STEPS.length - 2 ? "border-b border-black/10" : ""
                 } ${i % 2 === 0 ? "sm:pr-10" : "sm:pl-10"}`}
               >
-                <div className="relative flex size-[60px] items-center justify-center">
-                  {step.bg && (
-                    <Image src={step.bg} alt="" fill className="rounded-full" />
-                  )}
-                  <Image
-                    src={step.icon}
-                    alt=""
-                    width={step.bg ? 28 : 60}
-                    height={step.bg ? 28 : 60}
-                    className="relative"
-                  />
+                <div className="flex items-center gap-4">
+                  <div className="relative flex size-[60px] shrink-0 items-center justify-center">
+                    {step.bg && (
+                      <Image src={step.bg} alt="" fill className="rounded-full" />
+                    )}
+                    <Image
+                      src={step.icon}
+                      alt=""
+                      width={step.bg ? 28 : 60}
+                      height={step.bg ? 28 : 60}
+                      className="relative"
+                    />
+                  </div>
+                  <span className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#50bd96] to-[#f58729] p-[1.5px]">
+                    <span className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-brand-orange">
+                      <span className="size-[7px] rounded-full bg-brand-orange" />
+                      {step.step}
+                    </span>
+                  </span>
                 </div>
-                <span className="mt-6 inline-flex items-center gap-2 rounded-full border border-brand-orange/50 px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-brand-orange">
-                  <span className="size-[7px] rounded-full bg-brand-orange" />
-                  {step.step}
-                </span>
                 <h3 className="mt-4 text-xl font-semibold text-brand-purple">
                   {step.title}
                 </h3>

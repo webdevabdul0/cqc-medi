@@ -81,7 +81,7 @@ export function WhatMakesDifferent() {
           {POINTS.map((point) => (
             <div
               key={point.title}
-              className={`rounded-2xl bg-white p-6 shadow-[0_20px_40px_-15px_rgba(83,1,114,0.15)] ${
+              className={`flex h-[360px] flex-col rounded-2xl bg-white p-6 shadow-[0_20px_40px_-15px_rgba(83,1,114,0.15)] ${
                 point.offset ? "lg:mt-10" : ""
               }`}
             >
