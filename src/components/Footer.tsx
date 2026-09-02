@@ -56,18 +56,18 @@ export function Footer() {
           <p className="mt-3 max-w-[329px] text-sm text-white/70">
             Subscribe our news letter to get more free resources
           </p>
-          <form className="mt-6 flex max-w-[375px] gap-3">
+          <form className="mt-6 flex max-w-[375px] items-center rounded-[12px] border border-white bg-white pl-5 pr-2 py-2">
             <input
               type="email"
               placeholder="Enter your email"
-              className="w-full rounded-xl border border-white/30 bg-transparent px-5 py-3.5 text-white placeholder:text-white/60 focus:border-white focus:outline-none"
+              className="w-full bg-transparent text-base text-brand-purple placeholder:text-brand-purple/40 focus:outline-none"
             />
             <button
               type="submit"
               aria-label="Subscribe"
-              className="flex size-[46px] shrink-0 items-center justify-center rounded-lg bg-gradient-to-r from-[#f58729] to-[#ef5658]"
+              className="flex size-[42px] shrink-0 items-center justify-center rounded-[10px] bg-gradient-to-r from-[#f58729] to-[#ef5658]"
             >
-              <Image src="/images/footer-arrow.svg" alt="" width={24} height={24} />
+              <Image src="/images/footer-arrow.svg" alt="" width={20} height={20} />
             </button>
           </form>
         </div>

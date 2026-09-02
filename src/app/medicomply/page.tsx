@@ -23,6 +23,7 @@ import { PortalYourWaySection } from "@/components/medicomply/PortalYourWaySecti
 import { PricingSection } from "@/components/medicomply/PricingSection";
 import { PurplePromoSection } from "@/components/medicomply/PurplePromoSection";
 import { RegisteringCrossSell } from "@/components/medicomply/RegisteringCrossSell";
+import { DemoFormSection } from "@/components/medicomply/DemoFormSection";
 import { StatsRow } from "@/components/medicomply/StatsRow";
 import { StepsSection } from "@/components/medicomply/StepsSection";
 import { TeamRecordsStats } from "@/components/medicomply/TeamRecordsStats";
@@ -211,6 +212,7 @@ export default function MediComplyPage() {
         <StepsSection steps={ONBOARDING_STEPS} />
         <PricingSection />
         <RegisteringCrossSell />
+        <DemoFormSection />
         <CTA
           heading="Compliance you can show, on the day someone asks to see it."
           body="Book a demo and we will show you the portal configured for your service. If you would be better off waiting until you are registered, we will tell you that too."

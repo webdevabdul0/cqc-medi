@@ -21,7 +21,7 @@ export default function ResourcesPage() {
       <main className="flex-1">
         <ResourcesHero />
         <StartHereCards />
-        <ResourceLibrary />
+        {/* <ResourceLibrary /> */}
         <HonestBit />
         <WhatHappensSection />
         <CTA heading="Not sure which activities you need? That's the call to book." />

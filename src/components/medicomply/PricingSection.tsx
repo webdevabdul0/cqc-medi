@@ -33,7 +33,7 @@ export function PricingSection() {
             <ScrollReveal
               y={0}
               delay={0.15}
-              className="pointer-events-none absolute -right-[280px] bottom-0 z-20 hidden aspect-[4096/2731] h-[600px] w-auto max-w-none lg:block"
+              className="pointer-events-none absolute -right-[150px] bottom-0 z-20 hidden aspect-[4096/2731] h-[600px] w-auto max-w-none lg:block"
             >
               <Image
                 src="/images/mc-pricing-laptop.png"

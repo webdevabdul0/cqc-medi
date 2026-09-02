@@ -5,7 +5,7 @@ import { HERO_PILLS } from "./data";
 
 export function Hero() {
   return (
-    <section className="overflow-hidden bg-gradient-to-r from-brand-purple to-brand-purple-2 pb-20 pt-16 lg:pb-28 lg:pt-24">
+    <section className="overflow-hidden bg-gradient-to-r from-brand-purple to-brand-purple-2 pb-20 pt-36 lg:pb-28 lg:pt-56">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-[100px]">
         <ScrollReveal className="mx-auto max-w-[930px] text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-brand-green px-5 py-2.5 text-sm font-bold uppercase tracking-wide text-brand-orange">

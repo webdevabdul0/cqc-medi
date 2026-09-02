@@ -3,7 +3,7 @@ import { PrimaryButton } from "../Buttons";
 
 export function ThanksHero({ fileUrl }: { fileUrl: string }) {
   return (
-    <section className="bg-white py-20 lg:py-28">
+    <section className="bg-white pb-20 pt-36 lg:pb-28 lg:pt-56">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-[100px]">
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-10">
           <div>

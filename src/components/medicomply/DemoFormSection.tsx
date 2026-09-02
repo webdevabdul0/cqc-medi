@@ -2,14 +2,14 @@ import Image from "next/image";
 import { ScrollRevealStagger } from "../ScrollReveal";
 
 const POINTS = [
-  "How to work out which regulated activities apply to you",
-  "Every form CQC will ask for, and who completes each one",
-  "What a registered manager actually has to prove",
-  "The five mistakes that cause most rejections",
-  "Realistic timescales, so you don't sign a lease too early",
+  "The task list and templates for your service type",
+  "How the activity calendar would be built for you",
+  "Staff records, CPD tracking and the rota",
+  "What a self mock inspection looks like",
+  "A straight answer on whether you need it yet",
 ];
 
-export function StartHereCards() {
+export function DemoFormSection() {
   return (
     <section className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-[100px]">
@@ -17,8 +17,8 @@ export function StartHereCards() {
           <div className="bg-brand-purple p-8 sm:p-10">
             <div className="relative h-[275px] w-full overflow-hidden rounded-[20px]">
               <Image
-                src="/images/resources-starthere-photo.png"
-                alt="Consultant filling out a CQC application"
+                src="/images/mc-demo-meeting.png"
+                alt="Two consultants reviewing a CQC portal demo"
                 fill
                 sizes="(min-width: 1024px) 600px, 100vw"
                 className="object-cover"
@@ -26,15 +26,14 @@ export function StartHereCards() {
             </div>
             <span className="mt-8 inline-flex items-center gap-2 rounded-full border border-brand-green bg-white px-5 py-2.5 text-sm font-bold uppercase tracking-wide text-brand-orange">
               <Image src="/images/dot-icon.svg" alt="" width={9} height={9} />
-              Start here
+              What the demo covers
             </span>
             <h2 className="mt-6 text-3xl font-bold leading-[1.2] text-white sm:text-4xl">
-              The Easy Guide to Registering with CQC
+              Your sector, your calendar, your questions.
             </h2>
             <p className="mt-6 text-base leading-[1.3] text-white/90">
-              If you only read one thing on this page, read this. It walks
-              the whole registration process from working out whether
-              you&apos;re in scope to the day your certificate arrives.
+              Tell us what you run and we will show you the version of the
+              portal you would actually get.
             </p>
             <ul className="mt-6 space-y-3">
               {POINTS.map((point) => (

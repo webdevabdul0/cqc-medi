@@ -296,22 +296,22 @@ export const FAQ_ITEMS: AccordionItem[] = [
   },
   {
     title: "Do I need a registered manager?",
-    body: "Almost always, yes. Most regulated activities require a manager registered with CQC in their own right, with their own application, DBS check and interview. The main exception is a sole trader who manages the service personally — in that case the provider and the manager can be the same person, registered once rather than twice.",
+    body: "Most services do. The registered manager applies to CQC in their own right, has their own interview, and must have the qualifications and experience appropriate to the service they'll run. A small number of services are exempt, typically where the provider is an individual who is personally in day-to-day charge. If you're relying on an exemption, check it before you build your structure around it.",
   },
   {
     title: "Can I register without a clinical background?",
-    body: "Yes, as a provider or nominated individual you don't need to be clinical yourself. But the registered manager for a clinical activity typically does need relevant qualifications and experience, and CQC will test that at interview. Non-clinical owners usually pair with a clinically qualified registered manager rather than trying to fill that role themselves.",
+    body: "Yes. Providers register as a legal entity and don't personally need to be clinicians. What matters is that the people delivering and managing care are appropriately qualified. Plenty of successful registered providers come from business rather than clinical backgrounds. Your registered manager and clinical leads are where the clinical credibility has to sit.",
   },
   {
     title: "What happens if I trade without registering?",
-    body: "Carrying on a regulated activity without registration is a criminal offence. CQC can prosecute, issue an unlimited fine, force you to stop trading immediately, and it can count against you if you try to register later. It's also common for landlords, insurers and local authorities to ask for your CQC number before they'll work with you at all.",
+    body: "Carrying on a regulated activity without registration is a criminal offence, and CQC can prosecute. It also causes commercial damage that outlasts the enforcement: insurers, commissioners, landlords and payment providers all ask about it. If you think you may already be trading in scope, get advice quickly rather than waiting; providers who come forward are in a materially better position than those who are found.",
   },
   {
     title: "How many regulated activities should I register for?",
-    body: "All of them, and only the ones that actually describe what you do. Registering for too few means part of your service is technically unregistered; registering for too many widens what CQC can inspect without adding anything to your application. This is exactly why we spend the first call on scope rather than paperwork.",
+    body: "All the ones that describe what you actually do. Each is registered separately and there's no hierarchy between them, though registering for one sometimes removes the need to register for another. Nursing care provided as part of treatment of disease, disorder or injury is the usual example. Under-registering leaves you carrying on an unregistered activity; over-registering brings scrutiny you don't need.",
   },
   {
     title: "What does the registered manager interview involve?",
-    body: "A CQC assessor tests the manager's knowledge of the regulations, safeguarding, the fundamental standards, and the specifics of the service they're about to run. It isn't a formality — strong written applications still fail at this stage when the manager can't speak to their own statement of purpose under pressure. That's why we run mock interviews rather than just handing over a question list.",
+    body: "A structured interview with a CQC inspector covering your service model, safeguarding, regulatory knowledge, staffing, governance and how you'd handle specific scenarios. Strong applications still fail here, usually because the manager knows their service but can't connect it to the regulations. That gap is what our interview preparation is built to close.",
   },
 ];

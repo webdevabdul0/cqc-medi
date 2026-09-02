@@ -3,7 +3,7 @@ import { ScrollReveal } from "../ScrollReveal";
 
 export function PricesHero() {
   return (
-    <section className="bg-brand-purple pb-24 pt-16 lg:pb-32 lg:pt-24">
+    <section className="bg-brand-purple pb-24 pt-36 lg:pb-32 lg:pt-56">
       <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-center gap-16 px-6 lg:grid-cols-2 lg:gap-10 lg:px-[100px]">
         <ScrollReveal className="max-w-[610px]">
           <span className="inline-flex items-center gap-2 rounded-full border border-brand-green bg-transparent px-5 py-2.5 text-sm font-bold uppercase tracking-wide text-brand-orange backdrop-blur-md">

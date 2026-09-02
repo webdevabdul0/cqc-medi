@@ -3,7 +3,7 @@ import { ScrollReveal } from "../ScrollReveal";
 
 export function PortalYourWaySection() {
   return (
-    <section className="overflow-hidden bg-gradient-to-br from-brand-purple-2 to-brand-purple py-20 lg:py-28">
+    <section className="overflow-hidden py-20 lg:py-28" style={{ background: "linear-gradient(90.94deg, #530172 0.68%, #8109A9 49.91%, #530172 99.14%)" }}>
       <div className="mx-auto max-w-[1440px] px-6 lg:px-[100px]">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-10">
           <ScrollReveal>

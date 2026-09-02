@@ -18,15 +18,15 @@ export function CTA({
   secondaryHref?: string;
 }) {
   return (
-    <section className="relative overflow-hidden bg-white pb-32 pt-20 lg:pb-44 lg:pt-28">
+    <section className="relative overflow-hidden bg-white pb-56 pt-20 lg:pb-68 lg:pt-28">
       <div className="pointer-events-none absolute inset-x-0 top-[200px] hidden lg:block">
         <Image
           src="/images/cta-wave.svg"
           alt=""
           width={1481}
-          height={445}
-          className="w-full"
-          style={{ height: "auto" }}
+          height={465}
+          className="w-full origin-center"
+          style={{ height: "465px", transform: "scale(1.15)" }}
         />
       </div>
       <ScrollReveal className="relative mx-auto max-w-[1440px] px-6 text-center lg:px-[100px]">

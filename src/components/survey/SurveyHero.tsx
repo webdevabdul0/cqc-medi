@@ -3,7 +3,7 @@ import { ScrollReveal } from "../ScrollReveal";
 
 export function SurveyHero() {
   return (
-    <section className="bg-gradient-to-r from-brand-purple to-brand-purple-2 pb-20 pt-16 lg:pb-28 lg:pt-24">
+    <section className="bg-gradient-to-r from-brand-purple to-brand-purple-2 pb-20 pt-36 lg:pb-28 lg:pt-56">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-[100px]">
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-10">
           <ScrollReveal>

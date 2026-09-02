@@ -4,7 +4,7 @@ import { ALREADY_REGISTERED_PATHS } from "./data";
 
 export function AlreadyRegisteredPaths() {
   return (
-    <section className="bg-gradient-to-br from-brand-purple-2 to-brand-purple py-20 lg:py-28">
+    <section className="py-20 lg:py-28" style={{ background: "linear-gradient(90.94deg, #530172 0.68%, #8109A9 49.91%, #530172 99.14%)" }}>
       <div className="mx-auto max-w-[1440px] px-6 lg:px-[100px]">
         <ScrollReveal className="mx-auto max-w-[848px] text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-brand-green px-5 py-2.5 text-sm font-bold uppercase tracking-wide text-brand-orange">
