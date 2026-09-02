@@ -4,8 +4,18 @@ import { ScrollReveal } from "./ScrollReveal";
 
 export function CTA({
   heading = "Talk to the consultant who’d handle your file.",
+  body = "Fifteen minutes will tell you what you need to register for, what the process looks like for your service, and roughly how long it will take. If you don’t need us, we’ll say so.",
+  primaryLabel = "Book a free scope call",
+  primaryHref = "#call",
+  secondaryLabel = "See services and prices",
+  secondaryHref = "/services",
 }: {
   heading?: string;
+  body?: string;
+  primaryLabel?: string;
+  primaryHref?: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
 }) {
   return (
     <section className="relative overflow-hidden bg-white pb-32 pt-20 lg:pb-44 lg:pt-28">
@@ -24,14 +34,12 @@ export function CTA({
           {heading}
         </h2>
         <p className="mx-auto mt-6 max-w-[652px] text-base leading-[1.3] text-black/80 sm:text-lg">
-          Fifteen minutes will tell you what you need to register for, what the
-          process looks like for your service, and roughly how long it will
-          take. If you don&apos;t need us, we&apos;ll say so.
+          {body}
         </p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <PrimaryButton href="#call">Book a free scope call</PrimaryButton>
-          <OutlineButton href="/prices" dark>
-            See services and prices
+          <PrimaryButton href={primaryHref}>{primaryLabel}</PrimaryButton>
+          <OutlineButton href={secondaryHref} dark>
+            {secondaryLabel}
           </OutlineButton>
         </div>
       </ScrollReveal>
