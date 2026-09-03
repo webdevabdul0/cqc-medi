@@ -85,8 +85,8 @@ export function PricingSection() {
               </div>
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
-                <PrimaryButton href="#subscribe">Subscribe now</PrimaryButton>
-                <OutlineButton href="#call">Book a demo first</OutlineButton>
+                <PrimaryButton href="https://pay.gocardless.com/BRT01KYW3FK2XFX14FCWBQ757FN3Q" external>Subscribe now</PrimaryButton>
+                <OutlineButton href="https://calendly.com/smarthealthcompliance/medi-comply-demo-1" external>Book a demo first</OutlineButton>
               </div>
             </ScrollReveal>
           </div>

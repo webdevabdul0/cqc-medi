@@ -1,6 +1,14 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
+import { FlosslyModal } from "../FlosslyModal";
 import { PrimaryButton } from "../Buttons";
 import type { SurveyResult as SurveyResultType } from "./evaluate";
+
+const BOOK_CALL_FORM = "https://app.flossly.ai/lead-form/9fb650db3c42124684a0b26a3ab38981323c169fbc32d3306528c4c837b2e02d";
+const GOCARDLESS = "https://pay.gocardless.com/BRT01KYW3FK2XFX14FCWBQ757FN3Q";
+const CALENDLY_CALL = "https://calendly.com/smarthealthcompliance/medi-comply-demo-by-shc-1";
 
 const STAMP_CLASSES: Record<SurveyResultType["stampTone"], string> = {
   ok: "border-brand-green text-brand-green",
@@ -76,8 +84,7 @@ export function SurveyResult({
   onRestart: () => void;
 }) {
   const next = NEXT_STEP_COPY[result.route];
-  const bookingHref =
-    "https://calendly.com/smarthealthcompliance/medi-comply-demo-1";
+  const [formOpen, setFormOpen] = useState(false);
 
   return (
     <div className="mx-auto flex max-w-[1280px] flex-col gap-8">
@@ -197,14 +204,20 @@ export function SurveyResult({
             className="object-cover"
           />
           <div className="absolute inset-x-0 bottom-0 flex flex-wrap gap-3 border border-white bg-black/50 p-4 backdrop-blur-md">
-            <PrimaryButton href={bookingHref}>
+            <PrimaryButton
+              onClick={result.route === "start" ? undefined : () => setFormOpen(true)}
+              href={result.route === "start" ? CALENDLY_CALL : undefined}
+              external={result.route === "start"}
+            >
               {result.route === "start"
                 ? "Book the start call"
                 : "Book my £15 call"}
             </PrimaryButton>
             {result.route !== "start" && (
               <a
-                href={bookingHref}
+                href={CALENDLY_CALL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-xl border border-white bg-white px-[30px] py-4 text-base font-bold text-brand-purple transition-opacity hover:opacity-90"
               >
                 Already paid? Choose a time
@@ -228,6 +241,14 @@ export function SurveyResult({
           advice. Registration decisions rest with CQC alone.
         </p>
       </div>
+
+      {formOpen && (
+        <FlosslyModal
+          src={BOOK_CALL_FORM}
+          onClose={() => setFormOpen(false)}
+          redirectAfterSubmit={GOCARDLESS}
+        />
+      )}
     </div>
   );
 }

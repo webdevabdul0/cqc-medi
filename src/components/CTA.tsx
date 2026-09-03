@@ -6,7 +6,7 @@ export function CTA({
   heading = "Talk to the consultant who’d handle your file.",
   body = "Fifteen minutes will tell you what you need to register for, what the process looks like for your service, and roughly how long it will take. If you don’t need us, we’ll say so.",
   primaryLabel = "Book a free scope call",
-  primaryHref = "#call",
+  primaryHref = "https://calendly.com/smarthealthcompliance/medi-comply-demo-by-shc-1",
   secondaryLabel = "See services and prices",
   secondaryHref = "/services",
 }: {
@@ -37,7 +37,7 @@ export function CTA({
           {body}
         </p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <PrimaryButton href={primaryHref}>{primaryLabel}</PrimaryButton>
+          <PrimaryButton href={primaryHref} external>{primaryLabel}</PrimaryButton>
           <OutlineButton href={secondaryHref} dark>
             {secondaryLabel}
           </OutlineButton>

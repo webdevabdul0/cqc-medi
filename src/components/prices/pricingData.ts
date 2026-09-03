@@ -8,6 +8,14 @@ export type Plan = {
   features: string[];
   primaryLabel?: string;
   secondaryLabel?: string;
+  /** Flossly form URL — opens modal */
+  primaryFormSrc?: string;
+  /** Direct link for primary button (external) */
+  primaryHref?: string;
+  /** URL to navigate to after Flossly form submission */
+  redirectAfterSubmit?: string;
+  /** Secondary button link (always external) */
+  secondaryHref?: string;
 };
 
 export const STAGE_PLANS: Plan[][] = [
@@ -27,6 +35,8 @@ export const STAGE_PLANS: Plan[][] = [
         "3 mock interviews with written feedback",
       ],
       secondaryLabel: "Talk to us first",
+      primaryFormSrc: "https://app.flossly.ai/lead-form/882b3b64c4ddc41b02586ebd2fa525ff383a9d3eb87a547d7b895607bf2900ef",
+      secondaryHref: "https://calendly.com/smarthealthcompliance/medi-comply-demo-by-shc-1",
     },
     {
       tag: "One-off · Done for you",
@@ -41,6 +51,8 @@ export const STAGE_PLANS: Plan[][] = [
         "Statement of purpose written for your service",
       ],
       secondaryLabel: "Talk to us first",
+      primaryFormSrc: "https://app.flossly.ai/lead-form/882b3b64c4ddc41b02586ebd2fa525ff383a9d3eb87a547d7b895607bf2900ef",
+      secondaryHref: "https://calendly.com/smarthealthcompliance/medi-comply-demo-by-shc-1",
     },
     {
       tag: "One-off · Done for you",
@@ -55,6 +67,8 @@ export const STAGE_PLANS: Plan[][] = [
         "Written feedback on where your answers need work",
       ],
       secondaryLabel: "Talk to us first",
+      primaryFormSrc: "https://app.flossly.ai/lead-form/882b3b64c4ddc41b02586ebd2fa525ff383a9d3eb87a547d7b895607bf2900ef",
+      secondaryHref: "https://calendly.com/smarthealthcompliance/medi-comply-demo-by-shc-1",
     },
     {
       tag: "One-off · Done for you",
@@ -69,6 +83,8 @@ export const STAGE_PLANS: Plan[][] = [
         "Editable Word files you own outright",
       ],
       secondaryLabel: "Ask what's included",
+      primaryFormSrc: "https://app.flossly.ai/lead-form/7d347c1841783e354f1c4993cec5ec2fed1764b395d0139225d6f44d23b00c2b",
+      secondaryHref: "https://calendly.com/smarthealthcompliance/medi-comply-demo-by-shc-1",
     },
   ],
   // Stage 02 — Getting inspection-ready
@@ -87,6 +103,8 @@ export const STAGE_PLANS: Plan[][] = [
         "Prioritised action plan with deadlines",
       ],
       secondaryLabel: "Check availability",
+      primaryFormSrc: "https://app.flossly.ai/lead-form/97ceaf34f8eac4711b520c47796ac9efbc5ba50ccb53e451e8f89b5cf649fd6f",
+      secondaryHref: "https://calendly.com/smarthealthcompliance/medi-comply-demo-by-shc-1",
     },
     {
       tag: "Per visit · On site or remote",
@@ -102,12 +120,14 @@ export const STAGE_PLANS: Plan[][] = [
         "Follow-up visits at the same rate, no retainer",
       ],
       secondaryLabel: "Ask about multi-site",
+      primaryFormSrc: "https://app.flossly.ai/lead-form/a7c074ac689bb9e77039591113996cbb6efc535f5d3192c5818b0a9014e45e6b",
+      secondaryHref: "https://calendly.com/smarthealthcompliance/medi-comply-demo-by-shc-1",
     },
   ],
   // Stage 03 — Staying compliant
   [
     {
-      tag: "Monthly · Software · Cancel anytime",
+      tag: "Monthly · Software",
       title: "MediComply Software",
       price: "£99",
       priceNote: "per month",
@@ -120,6 +140,8 @@ export const STAGE_PLANS: Plan[][] = [
         "Prioritised action plan with deadlines",
       ],
       secondaryLabel: "Book a demo",
+      primaryHref: "https://pay.gocardless.com/BRT01KYW3FK2XFX14FCWBQ757FN3Q",
+      secondaryHref: "https://calendly.com/smarthealthcompliance/medi-comply-demo-by-shc-1",
     },
     {
       tag: "Not sure which one",
@@ -133,6 +155,8 @@ export const STAGE_PLANS: Plan[][] = [
         "Same consultant who'd handle your file",
       ],
       primaryLabel: "Book a Call",
+      primaryFormSrc: "https://app.flossly.ai/lead-form/d0738880e424e8fb0092a19a50d450a653c65800adba6b59e0d242ddbb49b1b9",
+      redirectAfterSubmit: "https://calendly.com/smarthealthcompliance/15-minute-call",
     },
   ],
 ];

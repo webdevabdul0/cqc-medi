@@ -1,12 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import { FlosslyModal } from "./FlosslyModal";
 import { OutlineButton, PrimaryButton } from "./Buttons";
+
+const APPLY_FORM = "https://app.flossly.ai/lead-form/8507123ef51ba69714224a44386168c6ea539286f1b0411811acc578e3b40a6c";
+const BOOK_CALL_HREF = "https://calendly.com/smarthealthcompliance/medi-comply-demo-by-shc-1";
 
 export function Hero() {
   const rootRef = useRef<HTMLElement>(null);
+  const [formOpen, setFormOpen] = useState(false);
 
   useEffect(() => {
     const root = rootRef.current;
@@ -43,6 +48,7 @@ export function Hero() {
   }, []);
 
   return (
+    <>
     <section
       ref={rootRef}
       className="bg-gradient-to-r from-brand-purple to-brand-purple-2 pb-24 pt-36 lg:pb-32 lg:pt-56"
@@ -65,8 +71,8 @@ export function Hero() {
             eleven at night, wondering whether what you&apos;ve written is good enough.
           </p>
           <div data-hero-buttons className="mt-10 flex flex-wrap gap-4">
-            <PrimaryButton href="#apply">Apply for CQC Registration</PrimaryButton>
-            <OutlineButton href="#call">Book a Call</OutlineButton>
+            <PrimaryButton onClick={() => setFormOpen(true)}>Apply for CQC Registration</PrimaryButton>
+            <OutlineButton href={BOOK_CALL_HREF} external>Book a Call</OutlineButton>
           </div>
         </div>
         <div data-hero-image className="relative">
@@ -93,5 +99,10 @@ export function Hero() {
         </div>
       </div>
     </section>
+
+    {formOpen && (
+      <FlosslyModal src={APPLY_FORM} onClose={() => setFormOpen(false)} />
+    )}
+    </>
   );
 }
