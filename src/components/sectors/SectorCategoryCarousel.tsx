@@ -22,12 +22,16 @@ export function SectorCategoryCarousel({ category }: { category: SectorCategory 
   const trackRef = useRef<HTMLDivElement>(null);
   const [atStart, setAtStart] = useState(true);
   const [atEnd, setAtEnd] = useState(category.sectors.length <= 1);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const updateEdges = () => {
     const el = trackRef.current;
     if (!el) return;
     setAtStart(el.scrollLeft <= 4);
     setAtEnd(el.scrollLeft + el.clientWidth >= el.scrollWidth - 4);
+    const card = el.querySelector<HTMLElement>("[data-sector-card]");
+    const cardWidth = (card?.offsetWidth ?? 600) + 32;
+    setCurrentIndex(Math.round(el.scrollLeft / cardWidth));
   };
 
   const scrollByCard = (dir: 1 | -1) => {
@@ -57,7 +61,7 @@ export function SectorCategoryCarousel({ category }: { category: SectorCategory 
             <ArrowIcon direction="left" />
           </button>
           <span className="rounded-full bg-brand-lilac px-4 py-1.5 text-sm font-bold text-brand-purple">
-            1 to {category.sectors.length}
+            {currentIndex + 1} to {category.sectors.length}
           </span>
           <button
             type="button"

@@ -75,12 +75,12 @@ export function Header() {
                   </a>
                 ))}
               </nav>
-              <Link
-                href="#login"
+              <a
+                href="https://smart-comply.co.uk/login"
                 className="rounded-xl bg-gradient-to-r from-[#f58729] to-[#ef5658] px-8 py-3.5 text-base font-bold text-[#fbfbfb] transition-opacity hover:opacity-90"
               >
                 Login
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -104,12 +104,12 @@ export function Header() {
                 </a>
               ))}
             </nav>
-            <Link
-              href="#login"
+            <a
+              href="https://smart-comply.co.uk/login"
               className="rounded-xl bg-gradient-to-r from-[#f58729] to-[#ef5658] px-8 py-3.5 text-base font-bold text-[#fbfbfb] transition-opacity hover:opacity-90"
             >
               Login
-            </Link>
+            </a>
           </div>
         </div>
       </header>
