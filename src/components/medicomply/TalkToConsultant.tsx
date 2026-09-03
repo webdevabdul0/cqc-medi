@@ -48,13 +48,13 @@ export function TalkToConsultant() {
             </ul>
           </div>
 
-          {/*
-            TODO: Flossly Form goes here to book the demo call. On
-            successful submission it should redirect the user to a
-            confirmation page.
-          */}
-          <div className="flex min-h-[500px] items-center justify-center overflow-hidden rounded-[40px] bg-brand-lilac p-8 sm:p-10">
-            <p className="text-2xl font-bold text-black/10">Flossly Form</p>
+          <div className="overflow-hidden rounded-[40px] bg-brand-lilac">
+            <iframe
+              src="https://app.flossly.ai/lead-form/d0738880e424e8fb0092a19a50d450a653c65800adba6b59e0d242ddbb49b1b9"
+              title="Book a demo"
+              className="min-h-[600px] w-full border-0"
+              allow="payment"
+            />
           </div>
         </ScrollRevealStagger>
       </div>

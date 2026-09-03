@@ -49,8 +49,13 @@ export function StartHereCards() {
             </ul>
           </div>
 
-          <div className="flex min-h-[500px] items-center justify-center bg-brand-lilac p-8 sm:p-10">
-            <p className="text-2xl font-bold text-black/10">Flossly Form</p>
+          <div className="bg-brand-lilac">
+            <iframe
+              src="https://app.flossly.ai/lead-form/8507123ef51ba69714224a44386168c6ea539286f1b0411811acc578e3b40a6c"
+              title="Get your free guide"
+              className="min-h-[600px] w-full border-0"
+              allow="payment"
+            />
           </div>
         </ScrollRevealStagger>
       </div>

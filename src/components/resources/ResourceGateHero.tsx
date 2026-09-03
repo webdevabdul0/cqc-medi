@@ -1,11 +1,38 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import type { RESOURCE_CARDS } from "./data";
+
+const RESOURCE_FORM = "https://app.flossly.ai/lead-form/8507123ef51ba69714224a44386168c6ea539286f1b0411811acc578e3b40a6c";
 
 export function ResourceGateHero({
   resource,
 }: {
   resource: (typeof RESOURCE_CARDS)[number];
 }) {
+  const router = useRouter();
+
+  useEffect(() => {
+    const handler = (e: MessageEvent) => {
+      if (!e.origin.includes("flossly.ai")) return;
+      const d = e.data as Record<string, unknown> | null;
+      if (!d) return;
+      const isSubmit =
+        d.type === "form_submitted" ||
+        d.type === "submission" ||
+        d.event === "submitted" ||
+        d.event === "submission_created" ||
+        d.submitted === true;
+      if (isSubmit) {
+        router.push(`/resources/${resource.slug}/thanks`);
+      }
+    };
+    window.addEventListener("message", handler);
+    return () => window.removeEventListener("message", handler);
+  }, [resource.slug, router]);
+
   return (
     <section className="bg-white pb-20 pt-36 lg:pb-28 lg:pt-56">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-[100px]">
@@ -33,13 +60,13 @@ export function ResourceGateHero({
             </div>
           </div>
 
-          {/*
-            TODO: Flossly Form goes here. On successful submission it should
-            redirect the user to /resources/[slug]/thanks so they land on the
-            "Thanks for downloading!" page and get the file.
-          */}
-          <div className="flex min-h-[500px] items-center justify-center overflow-hidden rounded-[40px] bg-brand-lilac p-8 sm:p-10">
-            <p className="text-2xl font-bold text-black/10">Flossly Form</p>
+          <div className="overflow-hidden rounded-[40px] bg-brand-lilac">
+            <iframe
+              src={RESOURCE_FORM}
+              title="Get your free resource"
+              className="min-h-[600px] w-full border-0"
+              allow="payment"
+            />
           </div>
         </div>
       </div>
