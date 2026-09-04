@@ -24,7 +24,7 @@ export function HonestBit() {
               and it&apos;s the reason we exist.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <PrimaryButton href="#call">Book a free demo</PrimaryButton>
+              <PrimaryButton href="https://calendly.com/smarthealthcompliance/medi-comply-demo-1" external>Book a free demo</PrimaryButton>
               <OutlineButton href="/services" dark>
                 See services and prices
               </OutlineButton>

@@ -29,7 +29,7 @@ export function ApplyingSection() {
             answer.
           </p>
           <div className="mt-8 flex justify-center">
-            <PrimaryButton href="#registration">
+            <PrimaryButton href="/services">
               Registration with interview preparation
             </PrimaryButton>
           </div>

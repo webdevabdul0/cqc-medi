@@ -1,8 +1,16 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 import { PrimaryButton } from "./Buttons";
+import { FlosslyModal } from "./FlosslyModal";
 import { ScrollReveal } from "./ScrollReveal";
 
+const REGISTRATION_FORM = "https://app.flossly.ai/lead-form/882b3b64c4ddc41b02586ebd2fa525ff383a9d3eb87a547d7b895607bf2900ef";
+
 export function ConsultantReview() {
+  const [formOpen, setFormOpen] = useState(false);
+
   return (
     <section className="bg-brand-lilac py-[100px] lg:py-[132px]">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-[100px]">
@@ -22,7 +30,7 @@ export function ConsultantReview() {
               knows what a weak answer looks like.
             </p>
             <div className="mt-10">
-              <PrimaryButton href="#apply">Apply for CQC Registration</PrimaryButton>
+              <PrimaryButton onClick={() => setFormOpen(true)}>Apply for CQC Registration</PrimaryButton>
             </div>
           </ScrollReveal>
           <ScrollReveal
@@ -39,6 +47,7 @@ export function ConsultantReview() {
           </ScrollReveal>
         </div>
       </div>
+      {formOpen && <FlosslyModal src={REGISTRATION_FORM} onClose={() => setFormOpen(false)} />}
     </section>
   );
 }

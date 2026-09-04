@@ -11,7 +11,7 @@ const POINTS = [
 
 export function DemoFormSection() {
   return (
-    <section className="bg-white py-20 lg:py-28">
+    <section id="demo" className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-[100px]">
         <ScrollRevealStagger className="overflow-hidden rounded-[40px] lg:grid lg:grid-cols-2">
           <div className="bg-brand-purple p-8 sm:p-10">

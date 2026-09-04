@@ -114,7 +114,7 @@ export default function MediComplyPage() {
             "If you want the coaching alongside the portal, that is our registration with interview preparation package.",
           ]}
           buttonLabel="Registration with interview preparation"
-          buttonHref="#registration"
+          buttonHref="/services"
           imageSrc="/images/mc-interview-team.png"
           imageAlt="Team preparing for a CQC registered manager interview"
           headingSize="sm:text-4xl lg:text-[42px]"
@@ -128,7 +128,7 @@ export default function MediComplyPage() {
             "In MediComply the record is created at the moment the task is completed, by the person who completed it, with the evidence attached there and then. You end up with a defensible audit trail rather than a tidier cupboard.",
           ]}
           buttonLabel="Registration with interview preparation"
-          buttonHref="#registration"
+          buttonHref="/services"
           imageSrc="/images/mc-paperless-photo.png"
           imageAlt="Provider going paperless with a compliance portal"
           headingSize="sm:text-4xl lg:text-[42px]"

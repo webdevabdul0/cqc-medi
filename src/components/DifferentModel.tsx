@@ -1,8 +1,16 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 import { PrimaryButton } from "./Buttons";
+import { FlosslyModal } from "./FlosslyModal";
 import { ScrollReveal } from "./ScrollReveal";
 
+const REGISTRATION_FORM = "https://app.flossly.ai/lead-form/882b3b64c4ddc41b02586ebd2fa525ff383a9d3eb87a547d7b895607bf2900ef";
+
 export function DifferentModel() {
+  const [formOpen, setFormOpen] = useState(false);
+
   return (
     <section className="bg-gradient-to-r from-brand-purple to-brand-purple-2">
       <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-stretch gap-16 px-6 lg:grid-cols-2 lg:gap-10 lg:px-[100px]">
@@ -33,10 +41,11 @@ export function DifferentModel() {
             happens next. That is the whole difference.
           </p>
           <div className="mt-10">
-            <PrimaryButton href="#apply">Apply for CQC Registration</PrimaryButton>
+            <PrimaryButton onClick={() => setFormOpen(true)}>Apply for CQC Registration</PrimaryButton>
           </div>
         </ScrollReveal>
       </div>
+      {formOpen && <FlosslyModal src={REGISTRATION_FORM} onClose={() => setFormOpen(false)} />}
     </section>
   );
 }

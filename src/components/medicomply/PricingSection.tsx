@@ -4,7 +4,7 @@ import { ScrollReveal } from "../ScrollReveal";
 
 export function PricingSection() {
   return (
-    <section className="bg-white py-10 lg:py-14">
+    <section id="pricing" className="bg-white py-10 lg:py-14">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-[100px]">
         <div className="mx-auto max-w-[1280px] overflow-hidden rounded-[40px] bg-brand-lilac">
           <ScrollReveal className="px-6 py-10 sm:px-10 sm:py-12">
