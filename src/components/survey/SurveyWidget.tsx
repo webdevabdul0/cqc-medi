@@ -77,8 +77,8 @@ export function SurveyWidget() {
         const urlRes = await fetch("/api/survey/upload-urls", { method: "POST" });
         if (!urlRes.ok) throw new Error("Failed to get upload URLs");
         const { survey: surveyUrls, result: resultUrls } = await urlRes.json() as {
-          survey: { uploadUrl: string; publicUrl: string };
-          result: { uploadUrl: string; publicUrl: string };
+          survey: { uploadUrl: string; readUrl: string };
+          result: { uploadUrl: string; readUrl: string };
         };
 
         // 3. Upload directly to S3
@@ -105,8 +105,8 @@ export function SurveyWidget() {
             phone: contact.phone,
             business: contact.business,
             location: contact.location,
-            surveyUrl: surveyUrls.publicUrl,
-            resultUrl: resultUrls.publicUrl,
+            surveyUrl: surveyUrls.readUrl,
+            resultUrl: resultUrls.readUrl,
             consent,
             reference,
           }),

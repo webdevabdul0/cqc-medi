@@ -65,6 +65,7 @@ export function ResourceGateHero({
               src={RESOURCE_FORM}
               title="Get your free resource"
               className="min-h-[600px] w-full border-0"
+              loading="lazy"
               allow="payment"
             />
           </div>

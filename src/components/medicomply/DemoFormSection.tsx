@@ -53,6 +53,7 @@ export function DemoFormSection() {
               src="https://app.flossly.ai/lead-form/d0738880e424e8fb0092a19a50d450a653c65800adba6b59e0d242ddbb49b1b9"
               title="Book a demo"
               className="min-h-[600px] w-full border-0"
+              loading="lazy"
               allow="payment"
             />
           </div>

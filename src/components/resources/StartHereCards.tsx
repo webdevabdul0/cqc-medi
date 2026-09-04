@@ -54,6 +54,7 @@ export function StartHereCards() {
               src="https://app.flossly.ai/lead-form/8507123ef51ba69714224a44386168c6ea539286f1b0411811acc578e3b40a6c"
               title="Get your free guide"
               className="min-h-[600px] w-full border-0"
+              loading="lazy"
               allow="payment"
             />
           </div>
