@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect, useRef } from "react";
 import { QUESTIONS, SECTIONS } from "./data";
 import { evaluate, type SurveyAnswers } from "./evaluate";
 import { SurveyQA } from "./SurveyQA";
@@ -40,6 +40,7 @@ export function SurveyWidget() {
   const [formError, setFormError] = useState<string | undefined>();
   const [finished, setFinished] = useState(false);
   const [reference] = useState(makeReference);
+  const submittedRef = useRef(false);
 
   const doneSections = useMemo(() => {
     return SECTIONS.filter((s) => {
@@ -53,6 +54,71 @@ export function SurveyWidget() {
     () => (finished ? evaluate(answers) : null),
     [finished, answers],
   );
+
+  // Generate PDFs, upload to S3, call webhook + email when survey finishes
+  useEffect(() => {
+    if (!finished || !result || submittedRef.current) return;
+    submittedRef.current = true;
+
+    const dateStr = new Date().toLocaleDateString("en-GB", {
+      weekday: "long", day: "numeric", month: "long", year: "numeric",
+    });
+
+    async function run() {
+      try {
+        // 1. Generate PDFs
+        const { buildSurveyPdf, buildResultPdf } = await import("@/lib/surveyPdf");
+        const [surveyBlob, resultBlob] = await Promise.all([
+          buildSurveyPdf(answers, contact, reference, dateStr),
+          buildResultPdf(result!, contact, reference, dateStr),
+        ]);
+
+        // 2. Get presigned upload URLs
+        const urlRes = await fetch("/api/survey/upload-urls", { method: "POST" });
+        if (!urlRes.ok) throw new Error("Failed to get upload URLs");
+        const { survey: surveyUrls, result: resultUrls } = await urlRes.json() as {
+          survey: { uploadUrl: string; publicUrl: string };
+          result: { uploadUrl: string; publicUrl: string };
+        };
+
+        // 3. Upload directly to S3
+        await Promise.all([
+          fetch(surveyUrls.uploadUrl, {
+            method: "PUT",
+            headers: { "Content-Type": "application/pdf" },
+            body: surveyBlob,
+          }),
+          fetch(resultUrls.uploadUrl, {
+            method: "PUT",
+            headers: { "Content-Type": "application/pdf" },
+            body: resultBlob,
+          }),
+        ]);
+
+        // 4. Call server: Flossly webhook + email
+        await fetch("/api/survey/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: contact.name,
+            email: contact.email,
+            phone: contact.phone,
+            business: contact.business,
+            location: contact.location,
+            surveyUrl: surveyUrls.publicUrl,
+            resultUrl: resultUrls.publicUrl,
+            consent,
+            reference,
+          }),
+        });
+      } catch (err) {
+        console.error("[survey submit]", err);
+      }
+    }
+
+    void run();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [finished]);
 
   if (finished && result) {
     return (
