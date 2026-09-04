@@ -17,7 +17,15 @@ export async function POST(req: Request) {
     reference: string;
   };
 
-  const { name, email, phone, business, location, surveyUrl, resultUrl, consent, reference } = body;
+  const { name, email, business, location, surveyUrl, resultUrl, consent, reference } = body;
+
+  // Normalise to E.164 international format (+44...)
+  const digits = body.phone.replace(/[^0-9]/g, "");
+  const phone = digits.startsWith("44")
+    ? `+${digits}`
+    : digits.startsWith("0")
+    ? `+44${digits.slice(1)}`
+    : `+${digits}`;
 
   const comments = [
     `Business: ${business}`,
