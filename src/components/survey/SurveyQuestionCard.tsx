@@ -10,7 +10,29 @@ export type SurveyField = {
   fullWidth?: boolean;
   value: string;
   onChange: (value: string) => void;
+  /** phone-specific */
+  isPhone?: boolean;
+  dialCode?: string;
+  onDialCodeChange?: (code: string) => void;
 };
+
+const DIAL_CODES = [
+  { code: "+44",  label: "🇬🇧 +44"  },
+  { code: "+353", label: "🇮🇪 +353" },
+  { code: "+1",   label: "🇺🇸 +1"   },
+  { code: "+33",  label: "🇫🇷 +33"  },
+  { code: "+49",  label: "🇩🇪 +49"  },
+  { code: "+34",  label: "🇪🇸 +34"  },
+  { code: "+39",  label: "🇮🇹 +39"  },
+  { code: "+31",  label: "🇳🇱 +31"  },
+  { code: "+91",  label: "🇮🇳 +91"  },
+  { code: "+971", label: "🇦🇪 +971" },
+  { code: "+92",  label: "🇵🇰 +92"  },
+  { code: "+880", label: "🇧🇩 +880" },
+  { code: "+234", label: "🇳🇬 +234" },
+  { code: "+254", label: "🇰🇪 +254" },
+  { code: "+27",  label: "🇿🇦 +27"  },
+];
 
 type BaseProps = {
   activeSection: string;
@@ -98,18 +120,47 @@ export function SurveyQuestionCard(props: OptionsProps | FormProps) {
           {props.type === "form" ? (
             <>
               <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                {props.fields.map((field) => (
-                  <input
-                    key={field.name}
-                    type={field.type ?? "text"}
-                    placeholder={field.label}
-                    value={field.value}
-                    onChange={(e) => field.onChange(e.target.value)}
-                    className={`rounded-xl bg-white px-6 py-3.5 text-base text-black placeholder:text-black/40 focus:outline-none focus:ring-2 focus:ring-brand-purple-2 ${
-                      field.fullWidth ? "sm:col-span-2" : ""
-                    }`}
-                  />
-                ))}
+                {props.fields.map((field) =>
+                  field.isPhone ? (
+                    <div
+                      key={field.name}
+                      className={`flex overflow-hidden rounded-xl bg-white focus-within:ring-2 focus-within:ring-brand-purple-2 ${
+                        field.fullWidth ? "sm:col-span-2" : ""
+                      }`}
+                    >
+                      <select
+                        value={field.dialCode ?? "+44"}
+                        onChange={(e) => field.onDialCodeChange?.(e.target.value)}
+                        className="shrink-0 border-r border-black/10 bg-white pl-3 pr-2 text-sm text-black focus:outline-none"
+                        aria-label="Country code"
+                      >
+                        {DIAL_CODES.map((d) => (
+                          <option key={d.code} value={d.code}>
+                            {d.label}
+                          </option>
+                        ))}
+                      </select>
+                      <input
+                        type="tel"
+                        placeholder={field.label}
+                        value={field.value}
+                        onChange={(e) => field.onChange(e.target.value)}
+                        className="min-w-0 flex-1 px-4 py-3.5 text-base text-black placeholder:text-black/40 focus:outline-none"
+                      />
+                    </div>
+                  ) : (
+                    <input
+                      key={field.name}
+                      type={field.type ?? "text"}
+                      placeholder={field.label}
+                      value={field.value}
+                      onChange={(e) => field.onChange(e.target.value)}
+                      className={`rounded-xl bg-white px-6 py-3.5 text-base text-black placeholder:text-black/40 focus:outline-none focus:ring-2 focus:ring-brand-purple-2 ${
+                        field.fullWidth ? "sm:col-span-2" : ""
+                      }`}
+                    />
+                  )
+                )}
               </div>
               {props.consentLabel && (
                 <label className="mt-6 flex items-start gap-3">

@@ -12,6 +12,7 @@ type Contact = {
   business: string;
   email: string;
   phone: string;
+  dialCode: string;
   location: string;
 };
 
@@ -34,6 +35,7 @@ export function SurveyWidget() {
     business: "",
     email: "",
     phone: "",
+    dialCode: "+44",
     location: "",
   });
   const [consent, setConsent] = useState(false);
@@ -102,7 +104,7 @@ export function SurveyWidget() {
           body: JSON.stringify({
             name: contact.name,
             email: contact.email,
-            phone: contact.phone,
+            phone: `${contact.dialCode}${contact.phone.replace(/[^0-9]/g, "").replace(/^0+/, "")}`,
             business: contact.business,
             location: contact.location,
             surveyUrl: surveyUrls.readUrl,
@@ -134,6 +136,7 @@ export function SurveyWidget() {
                 business: "",
                 email: "",
                 phone: "",
+                dialCode: "+44",
                 location: "",
               });
               setConsent(false);
@@ -210,9 +213,11 @@ export function SurveyWidget() {
               {
                 name: "phone",
                 label: "Phone number",
-                type: "tel",
+                isPhone: true,
                 value: contact.phone,
                 onChange: (v) => setContact((c) => ({ ...c, phone: v })),
+                dialCode: contact.dialCode,
+                onDialCodeChange: (v) => setContact((c) => ({ ...c, dialCode: v })),
               },
               {
                 name: "location",

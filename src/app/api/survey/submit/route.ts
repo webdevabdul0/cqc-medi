@@ -19,13 +19,9 @@ export async function POST(req: Request) {
 
   const { name, email, business, location, surveyUrl, resultUrl, consent, reference } = body;
 
-  // Normalise to E.164 international format (+44...)
-  const digits = body.phone.replace(/[^0-9]/g, "");
-  const phone = digits.startsWith("44")
-    ? `+${digits}`
-    : digits.startsWith("0")
-    ? `+44${digits.slice(1)}`
-    : `+${digits}`;
+  // Normalise to E.164 — client already prepends dial code and strips leading 0
+  const raw = body.phone.trim();
+  const phone = raw.startsWith("+") ? raw : `+${raw.replace(/[^0-9]/g, "")}`;
 
   const comments = [
     `Business: ${business}`,
