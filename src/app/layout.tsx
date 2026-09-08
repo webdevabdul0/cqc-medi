@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
 import { Quicksand } from "next/font/google";
-import dynamic from "next/dynamic";
+import { PopupWrapper } from "@/components/PopupWrapper";
 import "./globals.css";
-
-const StartPopup = dynamic(
-  () => import("@/components/StartPopup").then((m) => ({ default: m.StartPopup })),
-  { ssr: false },
-);
 
 const quicksand = Quicksand({
   variable: "--font-quicksand",
@@ -25,7 +20,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className={`${quicksand.variable} antialiased`}>
       <body className="min-h-full flex flex-col font-sans bg-white">
         {children}
-        <StartPopup />
+        <PopupWrapper />
       </body>
     </html>
   );

@@ -29,21 +29,37 @@ export function StartPopup() {
   const [visible,  setVisible]  = useState(false);
   const [step,     setStep]     = useState<1 | 2>(1);
 
-  const [name,     setName]     = useState("");
-  const [email,    setEmail]    = useState("");
-  const [phone,    setPhone]    = useState("");
-  const [dialCode, setDialCode] = useState("+44");
-  const [busy,     setBusy]     = useState(false);
-  const [error,    setError]    = useState<string | null>(null);
+  const [name,       setName]       = useState("");
+  const [email,      setEmail]      = useState("");
+  const [phone,      setPhone]      = useState("");
+  const [dialCode,   setDialCode]   = useState("+44");
+  const [busy,       setBusy]       = useState(false);
+  const [error,      setError]      = useState<string | null>(null);
+
+  const [emailTouched, setEmailTouched] = useState(false);
+  const [phoneTouched, setPhoneTouched] = useState(false);
 
   const lastFocusRef = useRef<Element | null>(null);
   const h1Ref        = useRef<HTMLHeadingElement>(null);
   const h2Ref        = useRef<HTMLHeadingElement>(null);
 
+  const phoneDigits = phone.replace(/\D/g, "").replace(/^0+/, "");
+  const emailValid  = EMAIL_RE.test(email.trim());
+  const phoneValid  = phoneDigits.length >= 7 && phoneDigits.length <= 12;
+
+  const emailError = emailTouched && email.trim() !== "" && !emailValid
+    ? "Please enter a valid email address"
+    : null;
+  const phoneError = phoneTouched && phone.trim() !== "" && !phoneValid
+    ? phoneDigits.length > 12
+      ? "Number is too long — please check it"
+      : "Number is too short — please check it"
+    : null;
+
   const canPay =
     name.trim() !== "" &&
-    EMAIL_RE.test(email.trim()) &&
-    phone.replace(/\D/g, "").length >= 6;
+    emailValid &&
+    phoneValid;
 
   // ── Show after delay ──────────────────────────────────────────────────────
   useEffect(() => {
@@ -101,7 +117,7 @@ export function StartPopup() {
         body: JSON.stringify({
           name:  name.trim(),
           email: email.trim(),
-          phone: `${dialCode}${digits}`,
+          phone: `${dialCode} ${digits}`,
         }),
       });
       window.location.href = PAY_URL;
@@ -138,8 +154,8 @@ export function StartPopup() {
       <div
         className="
           relative w-full bg-white px-7 pb-10 pt-8
-          rounded-t-[20px]
-          sm:max-w-[520px] sm:rounded-2xl sm:px-10 sm:pb-10 sm:pt-10
+          rounded-t-[40px]
+          sm:max-w-[520px] sm:rounded-[40px] sm:px-10 sm:pb-10 sm:pt-10
           max-h-[90vh] overflow-y-auto
         "
         style={{
@@ -164,35 +180,48 @@ export function StartPopup() {
         {/* ── STEP 1 ── */}
         {step === 1 && (
           <>
-            <p className="mb-3.5 text-[13px] font-semibold uppercase tracking-[0.16em] text-brand-purple">
-              A smaller way to begin
-            </p>
+            {/* Eyebrow badge */}
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-brand-green bg-white/80 px-4 py-2 backdrop-blur-sm">
+              <span className="size-2.5 shrink-0 rounded-full bg-brand-orange" />
+              <span className="text-[13px] font-bold uppercase tracking-[0.14em] text-brand-orange">
+                A smaller way to begin
+              </span>
+            </div>
+
+            {/* Headline */}
             <h2
               id="sp-title-1"
               ref={h1Ref}
               tabIndex={-1}
-              className="mb-4 text-[26px] font-bold leading-[1.15] text-brand-purple focus:outline-none sm:text-[28px]"
+              className="mb-4 font-bold leading-[1.3] text-brand-purple focus:outline-none"
             >
-              Start your CQC application for{" "}
-              <span className="text-brand-green">£99</span>
+              <span className="block text-[22px] sm:text-[27px]">
+                Start your CQC application for
+              </span>
+              <span className="block text-[52px] leading-none sm:text-[60px]">
+                £99
+              </span>
             </h2>
-            <p className="mb-5 max-w-[44ch] text-base font-medium leading-[1.55] text-black/80">
+
+            <p className="mb-5 text-[16px] leading-[1.3] text-black sm:text-[18px]">
               The £99 holds your place and gets your portal built around your
               service type. You keep the £1,500 balance until you are ready to
               submit.
             </p>
-            <p className="mb-6 inline-block rounded-[10px] bg-brand-lilac px-[18px] py-3 text-[15px] font-semibold text-brand-purple">
+
+            <p className="mb-6 inline-block rounded-[8px] bg-brand-lilac px-[18px] py-2.5 text-[15px] font-semibold text-[#740799]">
               £1,599 total. Your £99 comes off it.
             </p>
+
             <button
               onClick={goStep2}
-              className="block w-full rounded-xl bg-brand-purple py-[18px] text-[17px] font-bold text-white transition-colors hover:bg-brand-purple-2"
+              className="block w-full rounded-xl bg-brand-green py-[18px] text-[16px] font-bold text-white transition-opacity hover:opacity-90"
             >
               See what the £99 covers
             </button>
             <button
               onClick={dismiss}
-              className="mt-3.5 block w-full py-2.5 text-base font-semibold text-black/50 hover:text-black"
+              className="mt-3.5 block w-full py-2.5 text-center text-base font-semibold text-black/60 hover:text-black"
             >
               Not right now
             </button>
@@ -230,11 +259,16 @@ export function StartPopup() {
               placeholder="Email address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className={`mb-3 ${inputCls}`}
+              onBlur={() => setEmailTouched(true)}
+              className={`mb-1 ${inputCls} ${emailError ? "border-[#ef5658] focus:border-[#ef5658]" : ""}`}
             />
+            {emailError && (
+              <p className="mb-2 text-[12px] font-semibold text-[#ef5658]">{emailError}</p>
+            )}
+            {!emailError && <div className="mb-3" />}
 
             {/* Phone with dial code */}
-            <div className="mb-5 flex overflow-hidden rounded-xl border border-[#e1d9ee] bg-white focus-within:border-brand-purple">
+            <div className={`mb-1 flex overflow-hidden rounded-xl border bg-white focus-within:border-brand-purple ${phoneError ? "border-[#ef5658] focus-within:border-[#ef5658]" : "border-[#e1d9ee]"}`}>
               <select
                 value={dialCode}
                 onChange={(e) => setDialCode(e.target.value)}
@@ -250,9 +284,14 @@ export function StartPopup() {
                 placeholder="Phone number"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
+                onBlur={() => setPhoneTouched(true)}
                 className="min-w-0 flex-1 bg-white px-4 py-3.5 text-base text-black placeholder:text-black/40 focus:outline-none"
               />
             </div>
+            {phoneError && (
+              <p className="mb-2 mt-1 text-[12px] font-semibold text-[#ef5658]">{phoneError}</p>
+            )}
+            {!phoneError && <div className="mb-5" />}
 
             {error && (
               <p className="mb-3 text-sm font-semibold text-[#ef5658]">{error}</p>
@@ -268,6 +307,59 @@ export function StartPopup() {
             <p className="mt-3 text-center text-[13px] font-medium text-black/50">
               Non-refundable. Ten places a month.
             </p>
+
+            {/* ── What the £99 does ── */}
+            <div className="mt-7 border-t border-[#e1d9ee] pt-6">
+              <h3 className="mb-3 text-[15px] font-bold text-brand-purple">What your £99 does</h3>
+              <ul className="mb-4 space-y-2">
+                {[
+                  "Your place on this month's list",
+                  "Your portal built for your service type",
+                  "Your policy set, not a template",
+                  "Evidence mapped to the five key questions",
+                  "Registered manager requirements, in writing",
+                ].map((item) => (
+                  <li key={item} className="flex gap-2.5 text-[14px] font-medium leading-snug text-black/80">
+                    <span className="mt-0.5 shrink-0 font-bold text-brand-green">✓</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <ul className="mb-5 space-y-2">
+                {[
+                  "Your portal login, released when the balance clears",
+                  "The CQC's own registration fee",
+                  "DBS checks and qualifications",
+                ].map((item) => (
+                  <li key={item} className="flex gap-2.5 text-[14px] font-medium leading-snug text-black/40">
+                    <span className="mt-0.5 shrink-0 font-bold">×</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
+              {/* Cost breakdown */}
+              <ul className="mb-4 rounded-xl bg-brand-lilac px-4 py-3 space-y-1.5">
+                {[
+                  { label: "Today, deducted from your total", value: "£99" },
+                  { label: "Before you submit", value: "£1,500" },
+                ].map((row) => (
+                  <li key={row.label} className="flex justify-between gap-4 text-[14px] font-semibold text-brand-purple">
+                    <span>{row.label}</span><span className="whitespace-nowrap">{row.value}</span>
+                  </li>
+                ))}
+                <li className="flex justify-between gap-4 border-t border-[#e1d9ee] pt-2 text-[15px] font-bold text-brand-purple">
+                  <span>Total</span><span>£1,599</span>
+                </li>
+                <li className="flex justify-between gap-4 text-[13px] font-medium text-black/50">
+                  <span>Then, from the day your login is released</span><span className="whitespace-nowrap">£99/month</span>
+                </li>
+              </ul>
+
+              <p className="text-[13px] font-medium text-black/50">
+                Payment is by Direct Debit and takes three to five working days to clear.
+              </p>
+            </div>
           </>
         )}
       </div>

@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 const FLOSSLY_ENDPOINT = "https://app.flossly.ai/api/form/submit";
-const FLOSSLY_TOKEN    = "cb50d581936fc0ad8750f924ac3fd3f6470d815e9fec90ba7c1cb550ea6cd573";
+const FLOSSLY_TOKEN    = "b833d36f2c64aa922c69f7629c7b58ea308a45674d19a42b39c35489d38e5d14";
 
 export async function POST(req: Request) {
   const { name, email, phone } = await req.json() as {
@@ -10,6 +10,7 @@ export async function POST(req: Request) {
 
   const raw  = (phone ?? "").trim();
   const e164 = raw.startsWith("+") ? raw : `+${raw.replace(/\D/g, "")}`;
+  console.log("[popup/submit] received phone:", JSON.stringify(raw), "→ e164:", JSON.stringify(e164));
 
   try {
     const resp = await fetch(FLOSSLY_ENDPOINT, {
