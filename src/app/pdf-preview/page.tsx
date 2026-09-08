@@ -17,6 +17,9 @@ const SAMPLE_DATE = "Thursday, 4 September 2026";
 // A representative "needs gaps fixed" result
 const SAMPLE_RESULT_AUDIT: SurveyResult = {
   route: "audit",
+  outcome: "NEARLY",
+  gaps: 2,
+  blockers: 1,
   stamp: "GAPS FOUND",
   stampNote: "Action required",
   stampTone: "warn",
@@ -34,6 +37,9 @@ const SAMPLE_RESULT_AUDIT: SurveyResult = {
 // A "ready to go" result
 const SAMPLE_RESULT_START: SurveyResult = {
   route: "start",
+  outcome: "READY",
+  gaps: 0,
+  blockers: 0,
   stamp: "ELIGIBLE",
   stampNote: "Proceed to register",
   stampTone: "ok",
@@ -41,9 +47,9 @@ const SAMPLE_RESULT_START: SurveyResult = {
   sub: "All key eligibility criteria are met. You have a named registered manager, your regulated activity is confirmed, and your evidence pack foundations are in place.",
   findings: [
     { k: "ok", label: "Regulated activity — Treatment of disease, disorder or injury (TDDI)", note: "The services described place you in scope for registration." },
-    { k: "ok", label: "Registered manager — candidate identified and DBS obtained" },
-    { k: "ok", label: "Premises — suitable and inspectable" },
-    { k: "ok", label: "Policies and procedures — core set in place" },
+    { k: "ok", label: "Registered manager — candidate identified and DBS obtained", note: "" },
+    { k: "ok", label: "Premises — suitable and inspectable", note: "" },
+    { k: "ok", label: "Policies and procedures — core set in place", note: "" },
   ],
 };
 
