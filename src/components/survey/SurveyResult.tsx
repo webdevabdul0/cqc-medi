@@ -213,16 +213,6 @@ export function SurveyResult({
                 ? "Book the start call"
                 : "Book my £15 call"}
             </PrimaryButton>
-            {result.route !== "start" && (
-              <a
-                href={CALENDLY_CALL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-xl border border-white bg-white px-[30px] py-4 text-base font-bold text-brand-purple transition-opacity hover:opacity-90"
-              >
-                Already paid? Choose a time
-              </a>
-            )}
           </div>
         </div>
       </div>
