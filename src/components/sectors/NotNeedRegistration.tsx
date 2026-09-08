@@ -19,7 +19,7 @@ export function NotNeedRegistration({
   listItems = DEFAULT_EXEMPT_ACTIVITIES,
   footnote = "Other regulators may still apply: local authority licensing, the GDC, the GPhC, the HFEA or Ofsted depending on what you do. If you're unsure, ask us and we'll tell you straight.",
   buttonLabel = "Check whether you're in scope",
-  buttonHref = "#call",
+  buttonHref = "https://calendly.com/smarthealthcompliance/medi-comply-demo-by-shc-1",
   imageSrc = "/images/document-photo-v2.png",
   imageAlt = "Consultant reviewing whether a service needs CQC registration",
 }: {
@@ -72,7 +72,7 @@ export function NotNeedRegistration({
           )}
           {buttonLabel && (
             <div className="mt-8">
-              <PrimaryButton href={buttonHref}>{buttonLabel}</PrimaryButton>
+              <PrimaryButton href={buttonHref} external={buttonHref.startsWith("http")}>{buttonLabel}</PrimaryButton>
             </div>
           )}
         </ScrollReveal>
