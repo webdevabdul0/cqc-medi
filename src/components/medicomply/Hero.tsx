@@ -24,7 +24,7 @@ export function Hero() {
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <PrimaryButton href="https://calendly.com/smarthealthcompliance/medi-comply-demo-by-shc-1" external>Book a demo</PrimaryButton>
-            <OutlineButton href="/medicomply#pricing">See what it costs</OutlineButton>
+            <OutlineButton href="/services">See what it costs</OutlineButton>
           </div>
         </ScrollReveal>
       </div>
