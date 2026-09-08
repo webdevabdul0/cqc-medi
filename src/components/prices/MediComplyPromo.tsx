@@ -31,7 +31,7 @@ export function MediComplyPromo() {
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <PrimaryButton onClick={() => setFormOpen(true)}>Buy registration — £1,599</PrimaryButton>
-            <OutlineButton href="https://calendly.com/smarthealthcompliance/medi-comply-demo-1" external>
+            <OutlineButton href="https://calendly.com/smarthealthcompliance/medi-comply-demo-by-shc-1" external>
               See MediComply first
             </OutlineButton>
           </div>
