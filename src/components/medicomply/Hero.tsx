@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { OutlineButton, PrimaryButton } from "../Buttons";
-import { ScrollReveal, ScrollRevealStagger } from "../ScrollReveal";
-import { HERO_PILLS } from "./data";
+import { ScrollReveal } from "../ScrollReveal";
 
 export function Hero() {
   return (
@@ -65,23 +64,6 @@ export function Hero() {
         </ScrollReveal>
       </div>
 
-      <div className="mx-auto max-w-[1440px] px-6 lg:px-[100px]">
-        <ScrollRevealStagger className="mt-16 grid grid-cols-1 divide-y divide-white/60 rounded-[20px] border border-white/60 lg:mt-24 lg:grid-cols-5 lg:divide-x lg:divide-y-0">
-          {HERO_PILLS.map((pill) => (
-            <div key={pill.title} className="p-6">
-              <span className="text-xs font-bold uppercase tracking-wide text-white/60">
-                {pill.label}
-              </span>
-              <h3 className="mt-2 text-lg font-bold text-white">
-                {pill.title}
-              </h3>
-              <p className="mt-1 text-sm leading-[1.3] text-white/70">
-                {pill.body}
-              </p>
-            </div>
-          ))}
-        </ScrollRevealStagger>
-      </div>
     </section>
   );
 }
