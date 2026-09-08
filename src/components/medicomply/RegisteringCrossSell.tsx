@@ -34,7 +34,7 @@ export function RegisteringCrossSell() {
             <PrimaryButton href="/services">
               See registration packages
             </PrimaryButton>
-            <OutlineButton href="https://calendly.com/smarthealthcompliance/15-minute-call" external>Talk to a consultant</OutlineButton>
+            <OutlineButton href="https://calendly.com/smarthealthcompliance/medi-comply-demo-by-shc-1" external>Talk to a consultant</OutlineButton>
           </div>
         </ScrollReveal>
       </div>
