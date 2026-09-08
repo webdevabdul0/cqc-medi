@@ -23,17 +23,6 @@ export function ApplyingSection() {
           </p>
         </ScrollReveal>
 
-        <ScrollReveal className="mx-auto mt-12 max-w-[700px] text-center">
-          <p className="text-base font-semibold leading-[1.3] text-brand-purple">
-            An interview answer with a screen behind it is a different
-            answer.
-          </p>
-          <div className="mt-8 flex justify-center">
-            <PrimaryButton href="/services">
-              Registration with interview preparation
-            </PrimaryButton>
-          </div>
-        </ScrollReveal>
       </div>
     </section>
   );
