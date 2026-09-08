@@ -3,7 +3,7 @@ import { ScrollReveal } from "../ScrollReveal";
 
 export function ApplyingSection() {
   return (
-    <section className="bg-white py-20 lg:py-28">
+    <section className="bg-white pb-8 pt-20 lg:pb-10 lg:pt-28">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-[100px]">
         <ScrollReveal className="grid grid-cols-1 items-end gap-8 lg:grid-cols-2 lg:gap-10">
           <div>

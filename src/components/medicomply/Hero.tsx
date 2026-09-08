@@ -23,8 +23,8 @@ export function Hero() {
             over as an empty system.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <PrimaryButton href="#demo">Book a demo</PrimaryButton>
-            <OutlineButton href="#pricing">See what it costs</OutlineButton>
+            <PrimaryButton href="https://calendly.com/smarthealthcompliance/medi-comply-demo-by-shc-1" external>Book a demo</PrimaryButton>
+            <OutlineButton href="/medicomply#pricing">See what it costs</OutlineButton>
           </div>
         </ScrollReveal>
       </div>
