@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { label: "Sectors", href: "/sectors" },
   { label: "Medicomply", href: "/medicomply" },
   { label: "Resources", href: "/resources" },
+  { label: "Webinars", href: "/webinars" },
   { label: "Survey", href: "/survey" },
 ];
 
