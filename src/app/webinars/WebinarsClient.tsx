@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import { WebinarsHero } from "@/components/webinars/WebinarsHero";
 import { WebinarNextUp } from "@/components/webinars/WebinarNextUp";
 import { WebinarUpcoming } from "@/components/webinars/WebinarUpcoming";
@@ -17,12 +19,16 @@ export function WebinarsClient() {
 
   return (
     <>
-      <WebinarsHero />
-      <WebinarNextUp onRegister={openRegister} />
-      <WebinarUpcoming onRegister={openRegister} />
-      <WebinarHowItWorks />
-      <WebinarReplays onRegister={openRegister} />
-      <WebinarBand />
+      <Header />
+      <main className="flex-1">
+        <WebinarsHero />
+        <WebinarNextUp onRegister={openRegister} />
+        <WebinarUpcoming onRegister={openRegister} />
+        <WebinarHowItWorks />
+        <WebinarReplays onRegister={openRegister} />
+        <WebinarBand />
+      </main>
+      <Footer />
       {modalOpen && (
         <FlosslyModal src={FLOSSLY_WEBINAR_SRC} onClose={() => setModalOpen(false)} />
       )}
