@@ -13,7 +13,6 @@ import {
   MOVE_ACROSS_STEPS,
   ONBOARDING_STEPS,
 } from "@/components/medicomply/data";
-import { EvidenceSection } from "@/components/medicomply/EvidenceSection";
 import { FeatureTrio } from "@/components/medicomply/FeatureTrio";
 import { InterviewSection } from "@/components/medicomply/InterviewSection";
 import { FrequencyGrid } from "@/components/medicomply/FrequencyGrid";
@@ -46,7 +45,6 @@ export default function MediComplyPage() {
         <Hero />
         <StatsRow />
         <WhatItReplaces />
-        <EvidenceSection />
         <ComparisonSection />
         <OpenLibrarySection />
         <PortalYourWaySection />
