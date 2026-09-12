@@ -165,12 +165,18 @@ export type SectorCategory = {
 
 export const SECTOR_CATEGORIES: SectorCategory[] = [
   {
-    category: "",
+    category: "Care in people's homes and communities",
     sectors: [
       {
         photo: "/images/sector-domiciliary.png",
         title: "Domiciliary Care",
         body: "Our software is designed to streamline and enhance the operations of your domiciliary care business, providing you with the tools to deliver exceptional care while optimizing efficiency. With features like customizable care plans, you can tailor support to meet each client's unique needs, ensuring person-centered care. Real-time scheduling and staff management tools simplify workforce coordination, reducing administrative burdens and minimizing errors.",
+        activity: "Regulated activity: personal care",
+      },
+      {
+        photo: "/images/sector-livein.png",
+        title: "CQC registration for live-in care providers",
+        body: "A carer living in the client's home and providing personal care around the clock. The registration itself sits under the same activity as domiciliary care, but the operational questions are different: working time, rest breaks, accommodation arrangements, safeguarding when there's a single carer with no colleague present, and how you cover a placement when the carer is unwell. Your policies need to answer those specifically rather than reading like a standard homecare pack.",
         activity: "Regulated activity: personal care",
       },
       {
@@ -180,16 +186,104 @@ export const SECTOR_CATEGORIES: SectorCategory[] = [
         activity: "Regulated activity: personal care",
       },
       {
+        photo: "/images/sector-complex-care.png",
+        title: "CQC registration for complex care at home",
+        body: "Clinical care delivered in the community: tracheostomy and ventilation support, PEG feeding, catheter care, spinal injury packages and continuing healthcare placements. These services usually need more than one regulated activity, because personal care and nursing-led treatment sit under different headings. Getting that combination right at application stage saves you a variation later.",
+        activity: "Regulated activities: personal care · treatment of disease, disorder or injury",
+      },
+      {
+        photo: "/images/sector-care-homes.png",
+        title: "CQC registration for care homes",
+        body: "Residential care homes and nursing homes, where accommodation and care are provided together. Registration covers the location as well as the provider, so the premises themselves come under scrutiny: fire safety, environmental risk, room sizes and adaptations. If you employ registered nurses in their professional capacity, you'll usually need to register for treatment of disease, disorder or injury alongside the accommodation activity.",
+        activity:
+          "Regulated activities: accommodation with nursing or personal care · treatment of disease, disorder or injury",
+      },
+      {
+        photo: "/images/sector-substance-misuse.png",
+        title: "CQC registration for substance misuse services",
+        body: "Residential rehabilitation and detoxification services for people with drug or alcohol dependency. These registrations attract detailed questions about clinical governance, prescribing arrangements, medical oversight and how you manage risk during withdrawal. A registered manager with directly relevant experience is close to essential.",
+        activity:
+          "Regulated activity: accommodation for persons who require treatment for substance misuse",
+      },
+    ],
+  },
+  {
+    category: "Private clinics and aesthetics",
+    sectors: [
+      {
         photo: "/images/sector-hairtransplant.png",
         title: "Hair Transplant Clinic",
         body: "Our software is built to support the unique needs of hair transplant clinics, offering a range of features that streamline operations and ensure compliance with industry standards. We assist with digital audits and risk assessments, helping you identify and address potential areas of improvement efficiently. With mock inspection tools, your clinic can prepare thoroughly for regulatory evaluations, ensuring you meet all required standards. Additionally, our platform includes customisable policies, allowing you to tailor protocols to your clinic's specific needs.",
         activity: "Regulated activity: surgical procedures",
       },
       {
+        photo: "/images/sector-aesthetic.png",
+        title: "CQC registration for aesthetic clinics",
+        body: "Botulinum toxin, dermal fillers, thread lifts, polynucleotides, skin boosters and similar treatments. Whether you need to register turns on what you're actually doing: treatments involving prescription-only medicines, or provided by or under the supervision of a listed healthcare professional, generally fall within treatment of disease, disorder or injury. Purely cosmetic beauty treatments with no medicine involved usually don't. The line is finer than most clinic owners expect, and it's the single most common question we're asked.",
+        activity: "Regulated activity: treatment of disease, disorder or injury",
+      },
+      {
+        photo: "/images/sector-iv-drip.png",
+        title: "CQC registration for IV drip and vitamin infusion clinics",
+        body: "Intravenous vitamin therapy, hydration drips, NAD+ and booster injections, whether delivered from a clinic or as a mobile service. Infusions and injections given by or under the supervision of a healthcare professional bring you into scope. Mobile services raise an extra question CQC will ask directly: where is your registered location, and how do you maintain governance, medicines management and emergency response when treatment happens in a client's living room or a hotel suite.",
+        activity: "Regulated activity: treatment of disease, disorder or injury",
+      },
+      {
+        photo: "/images/sector-weight-loss.png",
+        title: "CQC registration for weight loss and weight management clinics",
+        body: "Prescribing services including GLP-1 weight loss injections. This is the fastest-growing area of new registration we see, and a lot of clinics have been trading for months before realising they're in scope. Depending on how the service is structured you may fall under services in slimming clinics, treatment of disease, disorder or injury, or the remote advice activity if you consult online. Prescribing governance and how you verify patient eligibility will be central to the application.",
+        activity:
+          "Regulated activities: services in slimming clinics · treatment of disease, disorder or injury",
+      },
+      {
+        photo: "/images/sector-scanning.png",
+        title: "CQC registration for scanning and ultrasound clinics",
+        body: "Private baby scanning, diagnostic ultrasound, imaging and health screening services. Some diagnostic work is specifically excepted from registration and some isn't, which makes this one of the activities where providers most often get it wrong in both directions: registering unnecessarily, or assuming an exemption that doesn't apply to what they actually offer. Worth checking before you sign a lease.",
+        activity: "Regulated activity: diagnostic and screening procedures",
+      },
+      {
         photo: "/images/sector-private-gp.png",
         title: "Private Clinics",
         body: "Our software is specifically designed for private clinics registered with the CQC, offering a range of features to streamline operations and ensure full compliance with regulatory standards. We assist with digital audits and risk assessments, enabling you to identify and address potential issues efficiently. Our mock inspection tools prepare your clinic for regulatory evaluations, while our customisable policies allow you to tailor procedures to your specific needs. Additionally, we provide comprehensive preparation for the CQC registered manager interview, equipping you with the knowledge and confidence to succeed.",
         activity: "Regulated activity: treatment of disease, disorder or injury",
+      },
+      {
+        photo: "/images/sector-remote-clinics.png",
+        title: "CQC registration for online and remote clinics",
+        body: "Digital consultation platforms, remote prescribing services, telephone triage and video GP services. Remote providers are held to the same standards as physical clinics, with additional expectations around identity verification, safeguarding when you can't see the patient's environment, and how you handle a patient who deteriorates between consultations.",
+        activity:
+          "Regulated activity: transport services, triage and medical advice provided remotely",
+      },
+      {
+        photo: "/images/sector-sports-medical.png",
+        title: "CQC registration for sports ground, gym and event medical services",
+        body: "Pitchside medical cover, event medics, stadium treatment rooms and treatment provided inside gyms. Exceptions that previously kept these services outside CQC regulation are being removed, and applications can be made from 7 September 2026. If you hold contracts with clubs, venues or event organisers, they will start asking whether you're registered, often before the second commencement date arrives.",
+        activity: "Regulated activity: treatment of disease, disorder or injury · new from 2026",
+      },
+      {
+        photo: "/images/sector-dental.png",
+        title: "CQC registration for dental practices",
+        body: "General and specialist dental practices, including squat practices registering for the first time and existing practices going through a change of ownership. Timing is what catches people out: the registration has to align with your completion date, your lease and your equipment install, and CQC won't be rushed because your contracts have moved. We build the application backwards from your opening date.",
+        activity: "Regulated activity: treatment of disease, disorder or injury",
+      },
+      {
+        photo: "/images/sector-physio.png",
+        title: "CQC registration for physiotherapy and musculoskeletal clinics",
+        body: "Physiotherapy, osteopathy-adjacent rehabilitation and MSK services. Whether registration is required depends on who provides the treatment and how the service is structured. Treatment provided by or under the supervision of a listed healthcare professional generally falls in scope, though exceptions apply. If you're unsure whether your setup needs registration, it's worth checking before you take on new premises or contracts.",
+        activity: "Regulated activity: treatment of disease, disorder or injury",
+      },
+      {
+        photo: "/images/sector-ambulance.png",
+        title: "CQC registration for independent ambulance and patient transport",
+        body: "Non-emergency patient transport, event ambulance cover and independent ambulance services. Vehicle standards, crew competence, medicines carried on board and how you handle a patient whose condition escalates in transit all feature heavily in the assessment.",
+        activity:
+          "Regulated activity: transport services, triage and medical advice provided remotely",
+      },
+      {
+        photo: "/images/sector-maternity.png",
+        title: "CQC registration for maternity and midwifery services",
+        body: "Independent midwives, private antenatal and postnatal care, and birth centres. Clinical escalation is the heart of the application: what happens when a home birth needs to transfer, who your named obstetric contact is, and how your indemnity arrangements stand up.",
+        activity: "Regulated activity: maternity and midwifery services",
       },
     ],
   },
