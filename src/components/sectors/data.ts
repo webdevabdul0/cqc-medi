@@ -169,8 +169,8 @@ export const SECTOR_CATEGORIES: SectorCategory[] = [
     sectors: [
       {
         photo: "/images/sector-domiciliary.png",
-        title: "CQC registration for domiciliary care agencies",
-        body: "Home care delivered in people's own houses and flats: help with washing, dressing, toileting, eating and mobility, plus medication support. Domiciliary care is the single most common new registration in England and one of the most heavily scrutinised, because CQC has seen a lot of agencies register and then fail to trade. Expect close questions on your recruitment plan, your travel time between calls, your on-call arrangements and how you'll fund the first six months before local authority payments start arriving.",
+        title: "Domiciliary Care",
+        body: "Our software is designed to streamline and enhance the operations of your domiciliary care business, providing you with the tools to deliver exceptional care while optimizing efficiency. With features like customizable care plans, you can tailor support to meet each client's unique needs, ensuring person-centered care. Real-time scheduling and staff management tools simplify workforce coordination, reducing administrative burdens and minimizing errors.",
         activity: "Regulated activity: personal care",
       },
       {
@@ -181,8 +181,8 @@ export const SECTOR_CATEGORIES: SectorCategory[] = [
       },
       {
         photo: "/images/sector-supported-living.png",
-        title: "CQC registration for supported living services",
-        body: "Care and support for people in their own tenancies, most often adults with a learning disability, autistic people, people with mental health needs or physical disabilities. Where you provide personal care, you must register. CQC will assess your application against Right support, right care, right culture, so your model of care, your approach to restrictive practice and how people are supported to have choice and control matter as much as your paperwork.",
+        title: "Supported Living",
+        body: "Our software is specifically designed to meet the needs of supported living businesses, offering robust tools and features to streamline your operations and enhance the quality of care. We provide comprehensive assistance with your CQC application and registration, ensuring your business meets all regulatory requirements right from the start. With tools for creating personalised support plans, managing staff schedules, and maintaining secure, compliant records, our software helps you deliver consistent, high-quality care.",
         activity: "Regulated activity: personal care",
       },
       {
@@ -212,8 +212,8 @@ export const SECTOR_CATEGORIES: SectorCategory[] = [
     sectors: [
       {
         photo: "/images/sector-hairtransplant.png",
-        title: "CQC registration for hair transplant clinics",
-        body: "FUE, FUT, DHI and related surgical hair restoration. Hair transplant clinics involve instruments entering the body, which puts them squarely in scope for surgical procedures. CQC has been increasingly active in this sector following concerns about unregistered clinics, overseas-trained operators and technicians performing procedures without appropriate supervision. Your application needs to be clear about exactly who does what, and what the supervising clinician's role actually is in practice.",
+        title: "Hair Transplant Clinic",
+        body: "Our software is built to support the unique needs of hair transplant clinics, offering a range of features that streamline operations and ensure compliance with industry standards. We assist with digital audits and risk assessments, helping you identify and address potential areas of improvement efficiently. With mock inspection tools, your clinic can prepare thoroughly for regulatory evaluations, ensuring you meet all required standards. Additionally, our platform includes customisable policies, allowing you to tailor protocols to your clinic's specific needs.",
         activity: "Regulated activity: surgical procedures",
       },
       {
@@ -243,8 +243,8 @@ export const SECTOR_CATEGORIES: SectorCategory[] = [
       },
       {
         photo: "/images/sector-private-gp.png",
-        title: "CQC registration for private GP and specialist practices",
-        body: "Private general practice, consultant-led clinics, sexual health services, travel clinics and occupational health where clinical treatment is provided. Straightforward in principle, but the application depends heavily on getting your scope right, because practices frequently register for one activity and then discover they've been carrying on another, which means a variation and a delay.",
+        title: "Private Clinics",
+        body: "Our software is specifically designed for private clinics registered with the CQC, offering a range of features to streamline operations and ensure full compliance with regulatory standards. We assist with digital audits and risk assessments, enabling you to identify and address potential issues efficiently. Our mock inspection tools prepare your clinic for regulatory evaluations, while our customisable policies allow you to tailor procedures to your specific needs. Additionally, we provide comprehensive preparation for the CQC registered manager interview, equipping you with the knowledge and confidence to succeed.",
         activity: "Regulated activity: treatment of disease, disorder or injury",
       },
       {
