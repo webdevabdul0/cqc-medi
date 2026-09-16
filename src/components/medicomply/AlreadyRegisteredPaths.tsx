@@ -4,17 +4,17 @@ import { ALREADY_REGISTERED_PATHS } from "./data";
 
 export function AlreadyRegisteredPaths() {
   return (
-    <section className="py-20 lg:py-28" style={{ background: "linear-gradient(90.94deg, #530172 0.68%, #8109A9 49.91%, #530172 99.14%)" }}>
+    <section className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-[100px]">
         <ScrollReveal className="mx-auto max-w-[848px] text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-brand-green px-5 py-2.5 text-sm font-bold uppercase tracking-wide text-brand-orange">
             <span className="size-2 rounded-full bg-brand-orange" />
             Where you are · already registered
           </span>
-          <h2 className="mt-6 text-3xl font-bold leading-[1.2] text-white sm:text-4xl">
+          <h2 className="mt-6 text-3xl font-bold leading-[1.2] text-brand-purple sm:text-4xl">
             Already registered and want an easier system
           </h2>
-          <p className="mt-4 text-base leading-[1.3] text-white/85">
+          <p className="mt-4 text-base leading-[1.3] text-black/70">
             They are compliant, they are not new, and they are tired of the
             way they are having to prove it. There are two versions of that,
             and we handle both.
@@ -25,16 +25,16 @@ export function AlreadyRegisteredPaths() {
           {ALREADY_REGISTERED_PATHS.map((path) => (
             <ScrollReveal
               key={path.label}
-              className="rounded-[40px] border border-white p-8 sm:p-10"
+              className="rounded-[40px] border border-[#cecece] bg-brand-lilac p-8 sm:p-10"
             >
               <span className="inline-flex items-center gap-2 rounded-full bg-brand-orange px-4 py-2 text-sm font-bold uppercase tracking-wide text-white">
                 <span className="size-2 rounded-full bg-white" />
                 {path.label}
               </span>
-              <h3 className="mt-4 text-2xl font-bold text-white sm:text-3xl">
+              <h3 className="mt-4 text-2xl font-bold text-brand-purple sm:text-3xl">
                 {path.title}
               </h3>
-              <p className="mt-4 max-w-[831px] text-base leading-[1.3] text-white/85">
+              <p className="mt-4 max-w-[831px] text-base leading-[1.3] text-black/70">
                 {path.body}
               </p>
 

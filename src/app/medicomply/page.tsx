@@ -68,7 +68,6 @@ export default function MediComplyPage() {
           imageAlt="MediComply compliance dashboard"
         />
         <PurplePromoSection
-          variant="white"
           heading="Inspect yourself, whenever you want to know where you stand."
           paragraphs={[
             "The self mock inspection walks the five key questions, safe, effective, caring, responsive and well-led, and asks you the questions an inspector would ask. Each one tells you the evidence you would need to show, and flags the critical ones where a no appears prominently in your report. You get a score against the pass threshold for each key question, so you know where you stand today rather than where you assume you stand. Run it before a manager starts, after a change of service, or any month you want a straight answer.",
