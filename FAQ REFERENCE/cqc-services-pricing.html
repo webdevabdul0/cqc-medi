@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Services &amp; Prices | CQC MediSolutions</title>
+
+<!--
+====================================================================
+  BUY NOW LINKS — swap these before publishing
+====================================================================
+  Search the file for  data-buy="..."  and replace the href.
+
+  LIVE ALREADY:
+    MediComply £99/mo -> https://buy.stripe.com/4gMcN4dsKbSD1MZbwvbwk01
+
+  NEEDS A STRIPE PAYMENT LINK CREATING:
+    reg-1165 | reg-int-1599 | int-599 | policy | mock | consult
+
+  If you'd rather keep the existing Elementor quote popup on the
+  three registration products, paste this back into their href:
+  #elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjIwNjUiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D
+
+  PRICES MARKED data-provisional="yes" ARE MY SUGGESTIONS, NOT YOURS.
+  Confirm or change: Policy Bundle £449, Mock Inspection £750,
+  Consultancy visits from £595.
+====================================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#0F2733;
+  --ink-soft:#4C6470;
+  --teal:#0E8478;
+  --teal-deep:#0A655B;
+  --amber:#B4661A;
+  --paper:#F6F8F7;
+  --card:#FFFFFF;
+  --rule:#DCE4E2;
+  --rule-strong:#B9C7C3;
+
+  --display:"Archivo",system-ui,sans-serif;
+  --body:"Public Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+
+  --wrap:1120px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+
+/* ---------- intro ---------- */
+.intro{padding:72px 0 40px;border-bottom:1px solid var(--rule)}
+.eyebrow{
+  font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--teal-deep);margin:0 0 18px;
+}
+.intro h1{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(34px,5.4vw,54px);line-height:1.04;
+  letter-spacing:-.022em;margin:0 0 20px;max-width:16ch;
+}
+.intro p{max-width:60ch;margin:0;color:var(--ink-soft);font-size:19px}
+
+/* ---------- phase picker ---------- */
+.picker{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);
+  border:1px solid var(--rule);border-radius:4px;overflow:hidden;margin:40px 0 0}
+.picker a{
+  background:var(--card);padding:20px 22px;text-decoration:none;color:var(--ink);
+  display:block;transition:background .18s ease;
+}
+.picker a:hover,.picker a:focus-visible{background:#EEF4F2}
+.picker .num{font-family:var(--mono);font-size:12px;color:var(--teal-deep);display:block;margin-bottom:6px}
+.picker .lbl{font-family:var(--display);font-weight:600;font-size:17px;display:block}
+.picker .sub{font-size:14px;color:var(--ink-soft);display:block;margin-top:2px}
+
+/* ---------- phase sections ---------- */
+.phase{padding:64px 0 8px}
+.phase-head{display:flex;align-items:baseline;gap:16px;padding-bottom:20px;
+  border-bottom:2px solid var(--ink);margin-bottom:34px;flex-wrap:wrap}
+.phase-head .stage{font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--teal-deep)}
+.phase-head h2{font-family:var(--display);font-weight:700;font-size:clamp(24px,3vw,31px);
+  letter-spacing:-.018em;margin:0}
+.phase-head .note{font-size:15px;color:var(--ink-soft);margin-left:auto}
+
+/* ---------- cards ---------- */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.card{
+  background:var(--card);border:1px solid var(--rule);border-radius:4px;
+  padding:28px;display:flex;flex-direction:column;position:relative;
+}
+.card.flag{border-color:var(--teal);box-shadow:0 0 0 1px var(--teal)}
+.tag{
+  position:absolute;top:-11px;left:26px;background:var(--teal);color:#fff;
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  padding:4px 10px;border-radius:2px;
+}
+.meta{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-soft);margin:0 0 12px}
+.card h3{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:-.012em;
+  margin:0 0 16px;line-height:1.24}
+
+.price{display:flex;align-items:flex-end;gap:9px;padding-bottom:18px;margin-bottom:18px;
+  border-bottom:1px dashed var(--rule-strong)}
+.price .fig{font-family:var(--display);font-weight:700;font-size:38px;letter-spacing:-.03em;line-height:1}
+.price .unit{font-size:14px;color:var(--ink-soft);padding-bottom:3px}
+.price .tbc{font-family:var(--mono);font-size:10.5px;color:var(--amber);border:1px solid var(--amber);
+  padding:2px 6px;border-radius:2px;margin-bottom:5px;letter-spacing:.06em}
+
+.card .what{margin:0 0 18px;color:var(--ink-soft);font-size:16px}
+.inc{list-style:none;margin:0 0 26px;padding:0;font-size:15.5px}
+.inc li{padding:7px 0 7px 22px;position:relative;border-top:1px solid var(--rule)}
+.inc li:first-child{border-top:0}
+.inc li::before{content:"";position:absolute;left:2px;top:15px;width:8px;height:8px;
+  border-left:2px solid var(--teal);border-bottom:2px solid var(--teal);
+  transform:rotate(-45deg)}
+
+.actions{margin-top:auto;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.btn{
+  font-family:var(--display);font-weight:600;font-size:15.5px;text-decoration:none;
+  padding:13px 26px;border-radius:3px;display:inline-block;transition:background .18s ease,transform .18s ease;
+}
+.btn-buy{background:var(--teal);color:#fff}
+.btn-buy:hover{background:var(--teal-deep)}
+.btn-talk{color:var(--ink);border:1px solid var(--rule-strong);padding:12px 22px}
+.btn-talk:hover{border-color:var(--ink)}
+a:focus-visible,.picker a:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+
+/* ---------- bundle strip ---------- */
+.bundle{margin:64px 0 0;background:var(--ink);color:#fff;border-radius:4px;padding:40px}
+.bundle .eyebrow{color:#7FD3C6}
+.bundle h2{font-family:var(--display);font-weight:700;font-size:clamp(23px,3vw,30px);
+  letter-spacing:-.018em;margin:0 0 12px;max-width:22ch}
+.bundle p{color:#C3D3D7;max-width:56ch;margin:0 0 26px}
+.bundle .btn-talk{color:#fff;border-color:#3E5C69}
+.bundle .btn-talk:hover{border-color:#fff}
+
+.footnote{padding:40px 0 80px;font-size:14.5px;color:var(--ink-soft);max-width:70ch}
+.footnote strong{color:var(--ink)}
+
+@media (max-width:860px){
+  .grid{grid-template-columns:1fr}
+  .picker{grid-template-columns:1fr}
+  .phase-head .note{margin-left:0;width:100%}
+  .intro{padding:48px 0 32px}
+  .bundle{padding:30px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<section class="intro">
+  <div class="wrap">
+    <p class="eyebrow">Services &amp; prices</p>
+    <h1>Every stage of CQC, priced up front.</h1>
+    <p>No hourly billing and no surprise invoices. Pick the stage you're at — applying, preparing for assessment, or running a registered service day to day — and buy the support you need for it.</p>
+
+    <nav class="picker" aria-label="Jump to a stage">
+      <a href="#stage-register">
+        <span class="num">STAGE 01</span>
+        <span class="lbl">Getting registered</span>
+        <span class="sub">Applications, policies, manager interview</span>
+      </a>
+      <a href="#stage-ready">
+        <span class="num">STAGE 02</span>
+        <span class="lbl">Getting inspection-ready</span>
+        <span class="sub">Mock inspections and consultant visits</span>
+      </a>
+      <a href="#stage-run">
+        <span class="num">STAGE 03</span>
+        <span class="lbl">Staying compliant</span>
+        <span class="sub">Software, audits, training, HR</span>
+      </a>
+    </nav>
+  </div>
+</section>
+
+<!-- ============ STAGE 01 ============ -->
+<section class="phase" id="stage-register">
+  <div class="wrap">
+    <div class="phase-head">
+      <span class="stage">Stage 01</span>
+      <h2>Getting registered</h2>
+      <span class="note">For providers who aren't registered with CQC yet.</span>
+    </div>
+
+    <div class="grid">
+
+      <!-- Registration + Interview -->
+      <article class="card flag">
+        <span class="tag">Most chosen</span>
+        <p class="meta">One-off · Done for you · Includes coaching</p>
+        <h3>CQC Registration with Interview Preparation</h3>
+        <div class="price">
+          <span class="fig">£1,599</span><span class="unit">one-off</span>
+        </div>
+        <p class="what">Our full registration service plus the coaching that gets your registered manager through their interview. This is the route we recommend to first-time providers, because a strong application still fails at interview stage.</p>
+        <ul class="inc">
+          <li>All CQC application forms drafted and submitted</li>
+          <li>Policies and procedures customised to your service</li>
+          <li>One-to-one coaching for the registered manager</li>
+          <li>3 mock interviews with written feedback</li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn-buy" data-buy="reg-int-1599" href="#">Buy now</a>
+          <a class="btn btn-talk" href="https://calendly.com/smarthealthcompliance/medi-comply-demo-by-shc-1">Talk to us first</a>
+        </div>
+      </article>
+
+      <!-- Registration only -->
+      <article class="card">
+        <p class="meta">One-off · Done for you</p>
+        <h3>CQC Registration</h3>
+        <div class="price">
+          <span class="fig">£1,165</span><span class="unit">one-off</span>
+        </div>
+        <p class="what">We complete and submit your CQC application for you, and handle CQC's follow-up questions until a decision is made. For providers who are confident about the interview and want the paperwork off their desk.</p>
+        <ul class="inc">
+          <li>New provider application form</li>
+          <li>Registered manager application form</li>
+          <li>DBS application and countersigning</li>
+          <li>Statement of purpose written for your service</li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn-buy" data-buy="reg-1165" href="#">Buy now</a>
+          <a class="btn btn-talk" href="https://calendly.com/smarthealthcompliance/medi-comply-demo-by-shc-1">Talk to us first</a>
+        </div>
+      </article>
+
+      <!-- Interview prep -->
+      <article class="card">
+        <p class="meta">One-off · Coaching · Remote</p>
+        <h3>CQC Interview Preparation</h3>
+        <div class="price">
+          <span class="fig">£599</span><span class="unit">one-off</span>
+        </div>
+        <p class="what">Intensive preparation for the registered manager interview. You've already applied — this gets you ready for the questions CQC actually asks, and the follow-ups they ask when an answer is thin.</p>
+        <ul class="inc">
+          <li>3 mock interviews with a compliance consultant</li>
+          <li>50+ question and answer pack (PDF)</li>
+          <li>15-minute prep call on the day</li>
+          <li>Written feedback on where your answers need work</li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn-buy" data-buy="int-599" href="#">Buy now</a>
+          <a class="btn btn-talk" href="https://calendly.com/smarthealthcompliance/medi-comply-demo-by-shc-1">Talk to us first</a>
+        </div>
+      </article>
+
+      <!-- Policy bundle -->
+      <article class="card">
+        <p class="meta">One-off · Documents · Editable Word</p>
+        <h3>Policy Bundle</h3>
+        <div class="price">
+          <span class="fig">£449</span><span class="unit">one-off</span>
+          <span class="tbc" data-provisional="yes">price to confirm</span>
+        </div>
+        <p class="what">A complete set of policies and procedures written for your sector and branded to your service, mapped to CQC's quality statements. Supplied in editable Word format so your team can keep them current — not a locked PDF.</p>
+        <ul class="inc">
+          <li>Full policy and procedure suite for your service type</li>
+          <li>Mapped to the CQC single assessment framework</li>
+          <li>Branded with your logo and service details</li>
+          <li>Editable Word files you own outright</li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn-buy" data-buy="policy" href="#">Buy now</a>
+          <a class="btn btn-talk" href="#contact-section">Ask what's included</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ STAGE 02 ============ -->
+<section class="phase" id="stage-ready">
+  <div class="wrap">
+    <div class="phase-head">
+      <span class="stage">Stage 02</span>
+      <h2>Getting inspection-ready</h2>
+      <span class="note">For registered providers with an assessment coming.</span>
+    </div>
+
+    <div class="grid">
+
+      <!-- Mock inspection -->
+      <article class="card">
+        <p class="meta">One-off · Assessment + written report</p>
+        <h3>Mock Inspection</h3>
+        <div class="price">
+          <span class="fig">£750</span><span class="unit">one-off</span>
+          <span class="tbc" data-provisional="yes">price to confirm</span>
+        </div>
+        <p class="what">A full rehearsal of a CQC assessment, run by a consultant who knows what inspectors open first. We review your evidence, records and staff files, interview your manager, and tell you what a real inspection would find.</p>
+        <ul class="inc">
+          <li>Evidence and records review against the quality statements</li>
+          <li>Registered manager interviewed as CQC would</li>
+          <li>Staff file and training compliance check</li>
+          <li>Written report with a rated finding per quality statement</li>
+          <li>Prioritised action plan with deadlines</li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn-buy" data-buy="mock" href="#">Buy now</a>
+          <a class="btn btn-talk" href="#contact-section">Check availability</a>
+        </div>
+      </article>
+
+      <!-- Consultancy visits -->
+      <article class="card">
+        <p class="meta">Per visit · On site or remote</p>
+        <h3>Consultancy Visits</h3>
+        <div class="price">
+          <span class="fig">£595</span><span class="unit">per visit</span>
+          <span class="tbc" data-provisional="yes">price to confirm</span>
+        </div>
+        <p class="what">A compliance consultant working alongside your team for the day. Most providers book one when they've taken on a new manager, had a requirement notice, or simply can't tell whether their systems would hold up.</p>
+        <ul class="inc">
+          <li>Gap analysis across governance, records and staffing</li>
+          <li>Hands-on fixes to your documents while we're there</li>
+          <li>Briefing session for your staff</li>
+          <li>Action plan you can hand straight to your manager</li>
+          <li>Follow-up visits at the same rate, no retainer</li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn-buy" data-buy="consult" href="#">Book a visit</a>
+          <a class="btn btn-talk" href="#contact-section">Ask about multi-site</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ STAGE 03 ============ -->
+<section class="phase" id="stage-run">
+  <div class="wrap">
+    <div class="phase-head">
+      <span class="stage">Stage 03</span>
+      <h2>Staying compliant</h2>
+      <span class="note">For providers running a registered service every day.</span>
+    </div>
+
+    <div class="grid">
+
+      <!-- MediComply -->
+      <article class="card flag">
+        <p class="meta">Monthly · Software · Cancel anytime</p>
+        <h3>MediComply Software</h3>
+        <div class="price">
+          <span class="fig">£99</span><span class="unit">per month</span>
+        </div>
+        <p class="what">The platform your compliance actually lives in once you're registered. Audits, risk assessments, staff training and rotas in one place, so evidence is ready when CQC asks rather than assembled in a panic the week before.</p>
+        <ul class="inc">
+          <li>100+ compliance templates, forms and checklists</li>
+          <li>40+ digital audits you complete on the app</li>
+          <li>Risk assessments with an auto-populating risk register</li>
+          <li>CPD course library with progress tracking</li>
+          <li>HR rota and staff availability management</li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn-buy" data-buy="medicomply" href="https://buy.stripe.com/4gMcN4dsKbSD1MZbwvbwk01">Buy now</a>
+          <a class="btn btn-talk" href="https://calendly.com/smarthealthcompliance/medi-comply-demo-1">Book a demo</a>
+        </div>
+      </article>
+
+      <!-- Bundle nudge inside grid -->
+      <article class="card">
+        <p class="meta">Not sure which one</p>
+        <h3>Tell us where you are and we'll tell you what you need</h3>
+        <div class="price">
+          <span class="fig">Free</span><span class="unit">15-minute call</span>
+        </div>
+        <p class="what">If you're between two options, a short call is faster than reading the page twice. We'll tell you honestly if you don't need the bigger package — including if you don't need us at all yet.</p>
+        <ul class="inc">
+          <li>No sales script and no pressure</li>
+          <li>A straight answer on timescales and cost</li>
+          <li>Same consultant who'd handle your file</li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn-buy" href="https://calendly.com/smarthealthcompliance/medi-comply-demo-by-shc-1">Book a call</a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="bundle">
+      <p class="eyebrow">Registration + software</p>
+      <h2>Register with us and MediComply picks up where we leave off.</h2>
+      <p>Everything we build during your application — your policies, your statement of purpose, your evidence — loads straight into MediComply. You start day one of trading with your compliance already set up rather than a folder of documents nobody opens again.</p>
+      <div class="actions">
+        <a class="btn btn-buy" data-buy="reg-int-1599" href="#">Buy registration — £1,599</a>
+        <a class="btn btn-talk" href="https://calendly.com/smarthealthcompliance/medi-comply-demo-1">See MediComply first</a>
+      </div>
+    </div>
+
+    <p class="footnote">
+      <strong>Payment.</strong> All prices exclude VAT. One-off services are payable in full before work begins; MediComply is billed monthly and can be cancelled at any time.
+      <!-- CONFIRM: add Tabeo finance line here if you want it on this page, e.g.
+           "Spread the cost of registration over 12 months with Tabeo — subject to status." -->
+      <br><br>
+      <strong>What we can't do.</strong> We can't guarantee a registration outcome — no consultancy can, and anyone who says otherwise is selling you something. What we can do is make sure CQC never rejects your application for something avoidable.
+    </p>
+  </div>
+</section>
+
+</body>
+</html>

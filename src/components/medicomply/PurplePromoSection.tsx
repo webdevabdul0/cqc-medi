@@ -34,13 +34,15 @@ export function PurplePromoSection({
             <ScrollReveal
               className={`py-8 lg:py-14 ${reverse ? "lg:order-2" : ""}`}
             >
-              <h2
-                className={`max-w-[540px] text-3xl font-bold leading-[1.2] sm:text-4xl lg:text-[42px] ${
-                  isWhite ? "text-brand-purple" : "text-white"
-                }`}
-              >
-                {heading}
-              </h2>
+              {heading && (
+                <h2
+                  className={`max-w-[540px] text-3xl font-bold leading-[1.2] sm:text-4xl lg:text-[42px] ${
+                    isWhite ? "text-brand-purple" : "text-white"
+                  }`}
+                >
+                  {heading}
+                </h2>
+              )}
               {paragraphs.map((paragraph) => (
                 <p
                   key={paragraph}

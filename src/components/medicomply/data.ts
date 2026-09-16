@@ -258,22 +258,22 @@ export const ESTABLISHED_PROVIDER_FAQ = [
   },
   {
     title: "Will we lose the history we have built up?",
-    body: "PLACEHOLDER — answer to be supplied.",
+    body: "No. Your compliance history belongs to you, and it stays that way. Everything you have built up so far, including audits, risk assessments, incident and complaint logs, training records, staff files, meeting minutes and inspection evidence, can be uploaded to your MediComply portal, so your records remain complete and your evidence trail continues without interruption. You remain the owner of your data at all times. If you ever decide to move on, you can download everything you have stored in the portal, in full, whenever you choose. Your records are never held back, and you will never be left without the evidence you need for inspection.",
   },
   {
     title: "Our team is not especially technical.",
-    body: "PLACEHOLDER — answer to be supplied.",
+    body: "Every MediComply subscription includes a personalised demo, guided onboarding and training for everyone who will use the portal, not just the account owner. Whether it's your registered manager, administrators or wider team, we'll make sure each person feels confident using the system from day one.",
   },
   {
     title: "We have an assessment coming. Is it too late to move?",
-    body: "PLACEHOLDER — answer to be supplied.",
+    body: "Whether you're mid-way through a contract or preparing for an upcoming inspection, you can move to MediComply at any time. Did you know switching to MediComply helps you organise your documents? Your policies, records and evidence sit in one clear, structured place, so everything is easy to find and ready when the inspector asks.",
   },
   {
     title: "We run more than one site.",
-    body: "PLACEHOLDER — answer to be supplied.",
+    body: "If you run more than one service, MediComply lets you manage every site from a single master login.",
   },
   {
     title: "What happens if we want to leave?",
-    body: "PLACEHOLDER — answer to be supplied.",
+    body: "MediComply subscriptions run on a 12-month minimum term. If you decide not to continue, simply give us three months' written notice. To end your subscription at the close of your 12-month term, your notice needs to reach us by the end of month nine. As always, your data remains yours. Before your subscription ends, you can download all of your records in full.",
   },
 ];

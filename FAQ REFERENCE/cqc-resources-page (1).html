@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free CQC Resources | Guides, Checklists and Templates | CQC MediSolutions</title>
+<meta name="description" content="Free CQC registration guides, document checklists, interview preparation packs and inspection readiness tools. Written by CQC compliance consultants. Download instantly.">
+
+<!--
+====================================================================
+  FREE RESOURCES PAGE. Replaces /resources/
+====================================================================
+  OBJECTIVE: capture the lead, then move them to a demo booking.
+
+  >>> WHAT THE DEVELOPER MUST WIRE UP <<<
+  1. Every form on this page posts to the FLOSSLY CRM lead endpoint.
+     Search for  data-lead-form  to find them.
+  2. Each form must carry a hidden field  resource  identifying which
+     download was requested. Search for  name="resource".
+  3. Also carry a hidden field  source_page  set to this page URL, so
+     you can see which page produced the lead.
+  4. On successful submit, DO NOT navigate away. Reveal the success
+     panel (id="success") which contains the download link AND the
+     demo booking button. This is where the conversion happens.
+  5. Email the PDF as well as showing the download. People fill forms
+     on a phone and read the PDF on a laptop.
+  6. The demo booking button on the success panel should use the
+     Calendly link with UTM tags so you can attribute bookings to
+     the resource that produced them.
+
+  >>> WHAT SABA MUST CONFIRM <<<
+  - The resource DESCRIPTIONS below are written from the titles only.
+    Check each one actually describes what is inside that PDF.
+  - Several current resources have unclear names ("ROI", "Free Case
+    Study", "Free Quick Guide"). I have renamed them. Confirm.
+  - The current page lists "2025 CQC Quality Statements". If that
+    document has not been reviewed for 2026, either update it or
+    remove the year from the title.
+  - Current page duplicates three resources. Removed here.
+  - Every card currently uses the same placeholder thumbnail. Worth
+    giving Nas a brief for nine distinct covers.
+====================================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#0F2733;
+  --ink-soft:#4C6470;
+  --teal:#0E8478;
+  --teal-deep:#0A655B;
+  --amber:#B4661A;
+  --amber-bg:#FDF3E4;
+  --paper:#F6F8F7;
+  --card:#FFFFFF;
+  --rule:#DCE4E2;
+  --rule-strong:#B9C7C3;
+  --display:"Archivo",system-ui,sans-serif;
+  --body:"Public Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --wrap:1080px;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);
+  font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--teal-deep);margin:0 0 16px}
+section{padding:64px 0 0}
+.sec-head{border-bottom:2px solid var(--ink);padding-bottom:18px;margin-bottom:30px}
+.sec-head h2{font-family:var(--display);font-weight:700;font-size:clamp(24px,3.2vw,32px);
+  letter-spacing:-.018em;margin:0 0 8px;max-width:26ch}
+.sec-head p{margin:0;color:var(--ink-soft);max-width:66ch}
+
+/* hero + featured */
+.hero{padding:70px 0 0}
+.hero h1{font-family:var(--display);font-weight:700;font-size:clamp(32px,5vw,50px);
+  line-height:1.05;letter-spacing:-.024em;margin:0 0 20px;max-width:18ch}
+.hero .lede{font-size:19.5px;color:var(--ink-soft);max-width:62ch;margin:0}
+
+.featured{display:grid;grid-template-columns:1.15fr 1fr;gap:0;margin-top:42px;
+  border:1px solid var(--rule);border-radius:4px;overflow:hidden;background:var(--card)}
+.feat-left{background:var(--ink);color:#fff;padding:38px 40px}
+.feat-left .eyebrow{color:#7FD3C6}
+.feat-left h2{font-family:var(--display);font-weight:700;font-size:clamp(23px,3vw,30px);
+  letter-spacing:-.018em;margin:0 0 14px;max-width:20ch}
+.feat-left p{color:#D4E1E4;margin:0 0 18px}
+.feat-left ul{list-style:none;margin:0;padding:0;font-size:15.5px}
+.feat-left li{padding:7px 0 7px 24px;position:relative;color:#DCE8EA}
+.feat-left li::before{content:"";position:absolute;left:2px;top:14px;width:8px;height:8px;
+  border-left:2px solid #7FD3C6;border-bottom:2px solid #7FD3C6;transform:rotate(-45deg)}
+.feat-right{padding:34px 36px}
+.feat-right h3{font-family:var(--display);font-weight:600;font-size:20px;margin:0 0 6px}
+.feat-right .sub{color:var(--ink-soft);font-size:15.5px;margin:0 0 20px}
+
+/* forms */
+.field{margin-bottom:12px}
+.field label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--ink-soft);margin-bottom:5px}
+.field input,.field select{width:100%;padding:11px 12px;border:1px solid var(--rule-strong);
+  border-radius:3px;font-family:var(--body);font-size:16px;color:var(--ink);background:#fff}
+.field input:focus,.field select:focus{outline:none;border-color:var(--teal);
+  box-shadow:0 0 0 3px rgba(14,132,120,.14)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.consent{font-size:13px;color:var(--ink-soft);margin:14px 0 16px;line-height:1.5}
+.consent a{color:var(--teal-deep)}
+
+/* buttons */
+.btn{font-family:var(--display);font-weight:600;font-size:15.5px;text-decoration:none;
+  padding:13px 26px;border-radius:3px;display:inline-block;border:0;cursor:pointer;
+  transition:background .18s ease;text-align:center}
+.btn-buy{background:var(--teal);color:#fff}
+.btn-buy:hover{background:var(--teal-deep)}
+.btn-full{width:100%;display:block}
+.btn-talk{color:var(--ink);border:1px solid var(--rule-strong);padding:12px 22px;background:none}
+.btn-talk:hover{border-color:var(--ink)}
+.btn-light{background:#fff;color:var(--ink)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+
+/* success panel */
+.success{display:none;background:#F1F7F5;border:1px solid var(--teal);border-radius:4px;
+  padding:30px 32px;margin-top:22px}
+.success.on{display:block}
+.success h3{font-family:var(--display);font-weight:700;font-size:22px;margin:0 0 10px}
+.success p{color:var(--ink-soft);margin:0 0 18px;max-width:52ch}
+.success .btns{display:flex;gap:12px;flex-wrap:wrap}
+
+/* resource grid */
+.grp-label{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--teal-deep);margin:34px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--rule-strong)}
+.grp-label:first-of-type{margin-top:0}
+.res{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:24px;
+  display:flex;flex-direction:column}
+.card .kind{font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink-soft);margin:0 0 10px}
+.card h3{font-family:var(--display);font-weight:600;font-size:18.5px;margin:0 0 10px;
+  letter-spacing:-.01em;line-height:1.3}
+.card p{margin:0 0 18px;color:var(--ink-soft);font-size:15.5px;line-height:1.55}
+.card .dl{margin-top:auto}
+
+/* demo band */
+.band{background:var(--ink);color:#fff;border-radius:4px;padding:40px 44px;margin-top:44px}
+.band .eyebrow{color:#7FD3C6}
+.band h2{font-family:var(--display);font-weight:700;font-size:clamp(23px,3vw,31px);
+  letter-spacing:-.018em;margin:0 0 14px;max-width:24ch}
+.band p{color:#D4E1E4;max-width:62ch;margin:0 0 24px}
+.band .btns{display:flex;gap:12px;flex-wrap:wrap}
+.band .btn-talk{color:#fff;border-color:#3E5C69}
+.band .btn-talk:hover{border-color:#fff}
+
+/* what happens next */
+.next{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);
+  border:1px solid var(--rule);border-radius:4px;overflow:hidden}
+.next div{background:var(--card);padding:24px}
+.next .n{font-family:var(--mono);font-size:12px;color:var(--teal);display:block;margin-bottom:9px}
+.next h3{font-family:var(--display);font-weight:600;font-size:17.5px;margin:0 0 8px}
+.next p{margin:0;color:var(--ink-soft);font-size:15.5px}
+
+.tail{padding:34px 0 80px;font-size:14.5px;color:var(--ink-soft);max-width:70ch}
+.tail a{color:var(--teal-deep)}
+
+@media (max-width:900px){
+  .featured{grid-template-columns:1fr}
+  .res,.next{grid-template-columns:1fr}
+  .hero{padding:46px 0 0}
+  .feat-left,.feat-right,.band{padding:28px}
+}
+@media (max-width:620px){ .two{grid-template-columns:1fr} }
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- ================= HERO + FEATURED ================= -->
+<div class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Free resources</p>
+    <h1>Guides, templates and free resources that every provider needs</h1>
+    <p class="lede">Written by our CQC compliance consultants from the applications we actually work on. No sign-up wall you have to fight, no drip campaign you can't escape. Tell us who you are, take what you need.</p>
+
+    <div class="featured">
+      <div class="feat-left">
+        <p class="eyebrow">Start here</p>
+        <h2>The Easy Guide to Registering with CQC</h2>
+        <p>If you only read one thing on this page, read this. It walks the whole registration process from working out whether you're in scope to the day your certificate arrives.</p>
+        <ul>
+          <li>How to work out which regulated activities apply to you</li>
+          <li>Every form CQC will ask for, and who completes each one</li>
+          <li>What a registered manager actually has to prove</li>
+          <li>The five mistakes that cause most rejections</li>
+          <li>Realistic timescales, so you don't sign a lease too early</li>
+        </ul>
+      </div>
+
+      <div class="feat-right">
+        <h3>Send me the guide</h3>
+        <p class="sub">Instant download, and we'll email you a copy too.</p>
+
+        <form data-lead-form id="featured-form" onsubmit="return showSuccess(event,'featured')">
+          <input type="hidden" name="resource" value="easy-guide-registering-with-cqc">
+          <input type="hidden" name="source_page" value="/resources/">
+
+          <div class="two">
+            <div class="field">
+              <label for="f-name">Full name</label>
+              <input id="f-name" name="full_name" type="text" required autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="f-company">Company</label>
+              <input id="f-company" name="company" type="text" required autocomplete="organization">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="f-email">Work email</label>
+            <input id="f-email" name="email" type="email" required autocomplete="email">
+          </div>
+
+          <div class="field">
+            <label for="f-phone">Phone</label>
+            <input id="f-phone" name="phone" type="tel" required autocomplete="tel">
+          </div>
+
+          <div class="field">
+            <label for="f-business">Type of service</label>
+            <select id="f-business" name="business_type" required>
+              <option value="">Select your service</option>
+              <option>Domiciliary care</option>
+              <option>Supported living</option>
+              <option>Care home</option>
+              <option>Aesthetic clinic</option>
+              <option>IV drip or infusion clinic</option>
+              <option>Hair transplant clinic</option>
+              <option>Scanning or diagnostic clinic</option>
+              <option>Weight management clinic</option>
+              <option>Private GP or specialist clinic</option>
+              <option>Dental practice</option>
+              <option>Online or remote clinic</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="f-stage">Where are you now</label>
+            <select id="f-stage" name="stage" required>
+              <option value="">Select your stage</option>
+              <option>Just researching, not applied yet</option>
+              <option>Ready to apply in the next 3 months</option>
+              <option>Application already submitted</option>
+              <option>Already registered, want ongoing compliance</option>
+            </select>
+          </div>
+
+          <p class="consent">We'll email you the guide and occasionally send CQC updates worth reading. Unsubscribe any time. See our <a href="#">privacy policy</a>.</p>
+
+          <button type="submit" class="btn btn-buy btn-full">Download the guide</button>
+        </form>
+
+        <div class="success" id="success-featured">
+          <h3>On its way. Check your inbox.</h3>
+          <p>While you've got a minute: most people who download this end up with the same question, which is whether their particular setup needs registering at all. Fifteen minutes on a call answers it properly.</p>
+          <div class="btns">
+            <a class="btn btn-buy" href="https://calendly.com/smarthealthcompliance/medi-comply-demo-by-shc-1?utm_source=resources&utm_medium=success&utm_campaign=easy-guide">Book a 15 minute call</a>
+            <a class="btn btn-talk" href="#" data-download>Download now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= RESOURCE LIBRARY ================= -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>The rest of the library</h2>
+      <p>Grouped by where you are in the process, because a guide written for someone who hasn't applied yet is no use to someone with an assessment next month.</p>
+    </div>
+
+    <p class="grp-label">Before you apply</p>
+    <div class="res">
+      <div class="card">
+        <p class="kind">PDF Guide</p>
+        <h3>Which regulated activities do you need?</h3>
+        <p>A plain English walkthrough of the activities in Schedule 1, with the service types that usually sit under each one. The most common cause of a rejected application is registering for the wrong thing.</p>
+        <div class="dl"><a class="btn btn-buy btn-full" href="#lead" data-resource="regulated-activities-guide">Download free</a></div>
+      </div>
+
+      <div class="card">
+        <p class="kind">PDF Guide</p>
+        <h3>CQC registration for supported living</h3>
+        <p>Written specifically for supported living providers, covering how tenancy and care arrangements affect what you register for, and what Right support, right care, right culture means for your application.</p>
+        <div class="dl"><a class="btn btn-buy btn-full" href="#lead" data-resource="supported-living-guide">Download free</a></div>
+      </div>
+
+      <div class="card">
+        <p class="kind">PDF Guide</p>
+        <h3>What CQC registration actually costs</h3>
+        <p>The full picture beyond the application fee: DBS, insurance, premises, staffing before you have income, and the annual fee once you're registered. Build your business plan on real numbers.</p>
+        <div class="dl"><a class="btn btn-buy btn-full" href="#lead" data-resource="cost-of-registration">Download free</a></div>
+      </div>
+    </div>
+
+    <p class="grp-label">While you're applying</p>
+    <div class="res">
+      <div class="card">
+        <p class="kind">Checklist</p>
+        <h3>Essential supporting documents checklist</h3>
+        <p>Every document CQC will expect alongside your application, in the order you'll need them. Print it, tick it off, stop wondering what you've forgotten.</p>
+        <div class="dl"><a class="btn btn-buy btn-full" href="#lead" data-resource="supporting-documents-checklist">Download free</a></div>
+      </div>
+
+      <div class="card">
+        <p class="kind">PDF Guide</p>
+        <h3>The full CQC registration guide</h3>
+        <p>The long version. Every form, every field that trips people up, what CQC does with your application once it's in, and how to answer their follow-up questions without weakening your own case.</p>
+        <div class="dl"><a class="btn btn-buy btn-full" href="#lead" data-resource="full-registration-guide">Download free</a></div>
+      </div>
+
+      <div class="card">
+        <p class="kind">Question pack</p>
+        <h3>Registered manager interview prep pack</h3>
+        <p>The questions inspectors ask, grouped by theme, with notes on what a strong answer contains and why a technically correct answer can still fail. Strong applications lose here more than anywhere else.</p>
+        <div class="dl"><a class="btn btn-buy btn-full" href="#lead" data-resource="interview-prep-pack">Download free</a></div>
+      </div>
+    </div>
+
+    <p class="grp-label">Once you're registered</p>
+    <div class="res">
+      <div class="card">
+        <p class="kind">PDF Guide</p>
+        <h3>The CQC quality statements explained</h3>
+        <p>What each quality statement means in practice, what evidence sits behind it, and the questions an inspector is likely to ask you about it. Written for providers, not for regulators.</p>
+        <div class="dl"><a class="btn btn-buy btn-full" href="#lead" data-resource="quality-statements">Download free</a></div>
+      </div>
+
+      <div class="card">
+        <p class="kind">Self-assessment</p>
+        <h3>Are you ready for an inspection?</h3>
+        <p>A self-assessment you can run this afternoon. Score your service against the areas inspectors look at first and find out where the gaps are while you still have time to close them.</p>
+        <div class="dl"><a class="btn btn-buy btn-full" href="#lead" data-resource="inspection-readiness">Download free</a></div>
+      </div>
+
+      <div class="card">
+        <p class="kind">Case study</p>
+        <h3>How one provider went from stuck to registered</h3>
+        <p>A real application that had stalled, what was wrong with it, and what we changed. Useful if you want to see how we work before you speak to anyone.</p>
+        <div class="dl"><a class="btn btn-buy btn-full" href="#lead" data-resource="case-study">Download free</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DEMO BAND ================= -->
+<section>
+  <div class="wrap">
+    <div class="band">
+      <p class="eyebrow">The honest bit</p>
+      <h2>A guide can tell you what to do. It can't tell you whether you've done it right.</h2>
+      <p>Everything on this page is genuinely free and genuinely useful. But reading a guide still leaves you deciding on your own whether your policies, your evidence and your answers are good enough. That judgement is the thing people actually get wrong, and it's the reason we exist.</p>
+      <div class="btns">
+        <a class="btn btn-light" href="https://calendly.com/smarthealthcompliance/medi-comply-demo-1?utm_source=resources&utm_medium=band&utm_campaign=demo">Book a free demo</a>
+        <a class="btn btn-talk" href="https://cqcmedisolutions.co.uk/services/">See services and prices</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHAT HAPPENS ON A DEMO ================= -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>What actually happens if you book</h2>
+      <p>No slide deck, no pressure, and no forty minute pitch. Here's the whole thing.</p>
+    </div>
+
+    <div class="next">
+      <div>
+        <span class="n">FIRST 5 MINUTES</span>
+        <h3>You tell us what you're setting up</h3>
+        <p>What the service is, where you've got to, and what's worrying you. That's usually enough for us to tell you which regulated activities you're looking at.</p>
+      </div>
+      <div>
+        <span class="n">NEXT 5 MINUTES</span>
+        <h3>We show you the portal</h3>
+        <p>The task list, the templates already loaded for your sector, and how the review and feedback works. You'll see quickly whether it suits how you work.</p>
+      </div>
+      <div>
+        <span class="n">LAST 5 MINUTES</span>
+        <h3>You get a straight answer</h3>
+        <p>Rough timescale, what it would cost, and whether you need us at all. Plenty of people leave this call knowing they can do it themselves. We'd rather you knew.</p>
+      </div>
+    </div>
+
+    <p class="tail">
+      Not sure whether your service needs registering in the first place? Start with <a href="https://cqcmedisolutions.co.uk/sectors/">the regulated activities and who needs to register</a>, or read <a href="https://cqcmedisolutions.co.uk/about/">how we work</a>.
+    </p>
+  </div>
+</section>
+
+<script>
+/* PREVIEW ONLY.
+   The developer must replace this with a real submit to the Flossly CRM
+   endpoint. Keep the behaviour: on success, hide the form and reveal the
+   success panel. Do NOT redirect to a thank-you page, because that loses
+   the demo prompt at the exact moment the person is most likely to book. */
+function showSuccess(e, key){
+  e.preventDefault();
+  document.getElementById(key + '-form').style.display = 'none';
+  document.getElementById('success-' + key).classList.add('on');
+  return false;
+}
+
+/* Library cards scroll to the featured form and preselect the resource.
+   Replace with the Elementor popup if you prefer, but keep the hidden
+   resource field populated so the CRM knows which download was requested. */
+document.querySelectorAll('[data-resource]').forEach(function(el){
+  el.addEventListener('click', function(ev){
+    ev.preventDefault();
+    var form = document.getElementById('featured-form');
+    form.querySelector('[name="resource"]').value = el.getAttribute('data-resource');
+    form.scrollIntoView({behavior:'smooth', block:'center'});
+    form.querySelector('input').focus({preventScroll:true});
+  });
+});
+</script>
+
+</body>
+</html>

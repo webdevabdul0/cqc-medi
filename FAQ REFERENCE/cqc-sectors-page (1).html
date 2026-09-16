@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CQC Registration by Sector | Home Care, Aesthetics, IV, Hair Transplant | CQC MediSolutions</title>
+<meta name="description" content="CQC registration support for domiciliary care, supported living, aesthetic clinics, IV drip clinics, hair transplant clinics, weight loss clinics, dental practices and more. Find which regulated activities apply to your service.">
+
+<!--
+====================================================================
+  SECTORS PAGE REBUILD: cqcmedisolutions.co.uk/sectors/
+====================================================================
+  Replaces the current page, which only describes the software.
+
+  ACCURACY NOTES FOR WHOEVER PUBLISHES THIS:
+  - Regulated activity names are taken from Schedule 1 of the Health
+    and Social Care Act 2008 (Regulated Activities) Regulations 2014.
+  - The page deliberately does NOT state a total number of regulated
+    activities. CQC's own pages say 14; Schedule 1 lists 15 headings.
+    Don't add a number.
+  - The page deliberately does NOT quote CQC fee amounts. They change.
+  - The sports ground / gymnasium change is SI 2026/495. Dates are
+    7 September 2026 (applications) and 6 December 2027 (all other
+    purposes). Verify both dates before publishing.
+  - Every claim links out to CQC or legislation.gov.uk. Keep those links.
+====================================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#0F2733;
+  --ink-soft:#4C6470;
+  --teal:#0E8478;
+  --teal-deep:#0A655B;
+  --amber:#B4661A;
+  --amber-bg:#FDF6EC;
+  --paper:#F6F8F7;
+  --card:#FFFFFF;
+  --rule:#DCE4E2;
+  --rule-strong:#B9C7C3;
+  --display:"Archivo",system-ui,sans-serif;
+  --body:"Public Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --wrap:1080px;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);
+  font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--teal-deep);margin:0 0 16px}
+
+/* hero */
+.hero{padding:76px 0 44px}
+.hero h1{font-family:var(--display);font-weight:700;font-size:clamp(33px,5.2vw,52px);
+  line-height:1.05;letter-spacing:-.022em;margin:0 0 22px;max-width:18ch}
+.hero .lede{font-size:20px;color:var(--ink-soft);max-width:62ch;margin:0}
+
+/* rule box */
+.rule-box{background:var(--ink);color:#fff;border-radius:4px;padding:36px 40px;margin:44px 0 0}
+.rule-box .eyebrow{color:#7FD3C6}
+.rule-box p{margin:0 0 14px;color:#D4E1E4;max-width:66ch}
+.rule-box p:last-child{margin-bottom:0}
+.rule-box strong{color:#fff}
+.rule-box a{color:#7FD3C6}
+
+section{padding:64px 0 0}
+.sec-head{border-bottom:2px solid var(--ink);padding-bottom:18px;margin-bottom:32px}
+.sec-head h2{font-family:var(--display);font-weight:700;font-size:clamp(25px,3.2vw,33px);
+  letter-spacing:-.018em;margin:0 0 8px}
+.sec-head p{margin:0;color:var(--ink-soft);max-width:64ch}
+
+/* regulated activities list */
+details.ra{background:var(--card);border:1px solid var(--rule);border-radius:4px;
+  margin-bottom:8px;overflow:hidden}
+details.ra summary{padding:16px 20px;cursor:pointer;list-style:none;display:flex;
+  align-items:baseline;gap:14px;font-family:var(--display);font-weight:600;font-size:17.5px}
+details.ra summary::-webkit-details-marker{display:none}
+details.ra summary::after{content:"+";margin-left:auto;font-family:var(--mono);
+  color:var(--teal);font-size:19px;font-weight:500}
+details.ra[open] summary::after{content:"–"}
+details.ra summary:hover{background:#EEF4F2}
+details.ra summary:focus-visible{outline:3px solid var(--amber);outline-offset:-3px}
+.ra .body{padding:2px 20px 20px 20px;border-top:1px solid var(--rule);margin-top:2px}
+.ra .body p{margin:14px 0 10px;color:var(--ink-soft);font-size:16px;max-width:70ch}
+.ra .body .tag{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--teal-deep);display:block;margin-top:12px}
+.ra .body ul{margin:6px 0 0;padding-left:20px;font-size:16px;color:var(--ink-soft)}
+.ra .body li{margin-bottom:3px}
+
+/* requirements grid */
+.reqs{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.req{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:24px}
+.req .n{font-family:var(--mono);font-size:12px;color:var(--teal-deep);display:block;margin-bottom:8px}
+.req h3{font-family:var(--display);font-weight:600;font-size:19px;margin:0 0 10px;letter-spacing:-.01em}
+.req p{margin:0;color:var(--ink-soft);font-size:16px}
+
+/* sectors */
+.sectors{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.sector{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:20px 22px}
+.sector h3{font-family:var(--display);font-weight:600;font-size:17.5px;margin:0 0 8px}
+.sector p{margin:0;font-size:15.5px;color:var(--ink-soft)}
+.sector .act{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--teal-deep);display:block;margin-top:12px;line-height:1.5}
+
+.grp-label{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--teal-deep);margin:36px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--rule-strong)}
+.grp-label:first-of-type{margin-top:0}
+
+/* out of scope block */
+.maybe-not{background:var(--card);border:1px solid var(--rule);border-radius:4px;
+  padding:32px 36px;margin-top:34px}
+.maybe-not h3{font-family:var(--display);font-weight:700;font-size:clamp(20px,2.5vw,25px);
+  margin:0 0 14px;letter-spacing:-.014em}
+.maybe-not p{color:var(--ink-soft);max-width:68ch;margin:0 0 12px}
+.maybe-not ul{margin:0 0 16px;padding-left:20px;color:var(--ink-soft);font-size:16px}
+.maybe-not li{margin-bottom:6px}
+.maybe-not .btn{margin-top:6px}
+
+/* alert */
+.alert{background:var(--amber-bg);border:1px solid #E8CFAA;border-left:4px solid var(--amber);
+  border-radius:4px;padding:30px 34px;margin-top:22px}
+.alert .eyebrow{color:var(--amber)}
+.alert h2{font-family:var(--display);font-weight:700;font-size:clamp(21px,2.6vw,26px);
+  margin:0 0 12px;letter-spacing:-.014em;max-width:26ch}
+.alert p{margin:0 0 12px;color:#5A4A34;max-width:68ch;font-size:16.5px}
+.alert p:last-of-type{margin-bottom:18px}
+.alert a{color:#8A4E11}
+
+/* cta */
+.cta{background:var(--card);border:1px solid var(--rule);border-radius:4px;
+  padding:40px;margin:64px 0 0;text-align:center}
+.cta h2{font-family:var(--display);font-weight:700;font-size:clamp(23px,3vw,30px);
+  margin:0 auto 14px;letter-spacing:-.018em;max-width:22ch}
+.cta p{color:var(--ink-soft);max-width:56ch;margin:0 auto 26px}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{font-family:var(--display);font-weight:600;font-size:15.5px;text-decoration:none;
+  padding:13px 26px;border-radius:3px;display:inline-block;transition:background .18s ease}
+.btn-buy{background:var(--teal);color:#fff}
+.btn-buy:hover{background:var(--teal-deep)}
+.btn-talk{color:var(--ink);border:1px solid var(--rule-strong);padding:12px 22px}
+.btn-talk:hover{border-color:var(--ink)}
+a:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+
+.disclaimer{padding:36px 0 80px;font-size:14.5px;color:var(--ink-soft);max-width:74ch}
+.disclaimer a{color:var(--teal-deep)}
+
+@media (max-width:860px){
+  .reqs,.sectors{grid-template-columns:1fr}
+  .hero{padding:48px 0 30px}
+  .rule-box,.alert,.cta{padding:26px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<div class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Who we work with</p>
+    <h1>If your service needs CQC registration, we can register it.</h1>
+    <p class="lede">People assume CQC registration depends on what kind of business you run. It doesn't. It depends on the <strong>regulated activity</strong> you carry on. Get that part right and the rest of the application follows. Get it wrong and CQC will reject your application, or worse, you'll trade unregistered without realising it.</p>
+
+    <div class="rule-box">
+      <p class="eyebrow">The rule in one paragraph</p>
+      <p>If you carry on any activity listed in Schedule 1 of the Health and Social Care Act 2008 (Regulated Activities) Regulations 2014 in England, <strong>you must register with CQC</strong> unless a specific exception or exemption applies. Each regulated activity is registered separately, and there is no hierarchy between them, so you apply for all the ones that describe what you actually do.</p>
+      <p>Carrying on a regulated activity without being registered is a criminal offence. That's why we spend the first conversation on scope, not paperwork.</p>
+      <p><a href="https://www.cqc.org.uk/guidance-regulation/providers/registration/scope-registration" rel="noopener">Read CQC's scope of registration guidance →</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- ================= REGULATED ACTIVITIES ================= -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>The regulated activities</h2>
+      <p>Open the ones that sound like your service. Most providers register for more than one, and the combinations are where applications usually go wrong.</p>
+    </div>
+
+    <details class="ra">
+      <summary>Personal care</summary>
+      <div class="body">
+        <p>Help with the things people can't do for themselves at home: washing, dressing, toileting, eating and help with mobility. It's the activity behind most domiciliary care and supported living services.</p>
+        <span class="tag">Watch out for</span>
+        <p>Housing support and social support on their own (shopping, cleaning, companionship) don't trigger registration. Neither does only prompting or supervising medicines. The moment you cross into personal care tasks, you need to be registered.</p>
+      </div>
+    </details>
+
+    <details class="ra">
+      <summary>Accommodation for persons who require nursing or personal care</summary>
+      <div class="body">
+        <p>Care homes, with or without nursing, where you provide both the accommodation and the care together.</p>
+        <span class="tag">Typical providers</span>
+        <ul><li>Residential care homes</li><li>Nursing homes</li><li>Some supported living models, depending on how the tenancy and care are structured</li></ul>
+      </div>
+    </details>
+
+    <details class="ra">
+      <summary>Treatment of disease, disorder or injury</summary>
+      <div class="body">
+        <p>The broadest activity on the list, and the one most private clinics need. It covers treatment provided or supervised by a listed healthcare professional: doctors, dentists, nurses and others.</p>
+        <span class="tag">Typical providers</span>
+        <ul><li>Aesthetic clinics using prescription-only medicines</li><li>IV drip and vitamin infusion clinics</li><li>Private GP and specialist practices</li><li>Weight management clinics prescribing medication</li><li>Sexual health and travel clinics</li></ul>
+      </div>
+    </details>
+
+    <details class="ra">
+      <summary>Surgical procedures</summary>
+      <div class="body">
+        <p>Procedures involving instruments or equipment inserted into the body, carried out by or under the supervision of a healthcare professional.</p>
+        <span class="tag">Typical providers</span>
+        <ul><li>Hair transplant clinics</li><li>Cosmetic surgery providers</li><li>Some minor surgery and dermatology services</li></ul>
+      </div>
+    </details>
+
+    <details class="ra">
+      <summary>Diagnostic and screening procedures</summary>
+      <div class="body">
+        <p>Tests and investigations carried out to find out something about a person's health.</p>
+        <span class="tag">Typical providers</span>
+        <ul><li>Private ultrasound and baby scanning clinics</li><li>Imaging and radiology services</li><li>Certain blood testing and health screening services</li></ul>
+        <span class="tag">Watch out for</span>
+        <p>Some diagnostic work is specifically excepted. This is one of the activities where providers most often register for the wrong thing, or assume they're exempt when they aren't.</p>
+      </div>
+    </details>
+
+    <details class="ra">
+      <summary>Nursing care</summary>
+      <div class="body">
+        <p>Care provided by a registered nurse, or planned and supervised by one, where it isn't already covered by another activity you're registering for.</p>
+        <span class="tag">Watch out for</span>
+        <p>If nursing care is delivered as part of treatment of disease, disorder or injury, you generally won't need to register for it separately. If it's provided in its own right, you may.</p>
+      </div>
+    </details>
+
+    <details class="ra">
+      <summary>Transport services, triage and medical advice provided remotely</summary>
+      <div class="body">
+        <p>Patient transport and ambulance services, plus clinical advice and triage given by phone, video or online.</p>
+        <span class="tag">Typical providers</span>
+        <ul><li>Independent ambulance and patient transport services</li><li>Online consultation and remote prescribing services</li><li>Telephone triage lines</li></ul>
+      </div>
+    </details>
+
+    <details class="ra">
+      <summary>Maternity and midwifery services</summary>
+      <div class="body">
+        <p>Care for women during pregnancy, labour and the postnatal period.</p>
+        <span class="tag">Typical providers</span>
+        <ul><li>Independent midwifery services</li><li>Private birth centres</li><li>Some postnatal care providers</li></ul>
+      </div>
+    </details>
+
+    <details class="ra">
+      <summary>Services in slimming clinics</summary>
+      <div class="body">
+        <p>Weight reduction services where medicines are supplied or prescribed, provided by or under the supervision of a medical practitioner.</p>
+        <span class="tag">Watch out for</span>
+        <p>The rapid growth of weight loss injection services has pulled a lot of clinics into scope who never expected to be regulated. If you prescribe, you should assume you're in scope until told otherwise.</p>
+      </div>
+    </details>
+
+    <details class="ra">
+      <summary>Family planning services</summary>
+      <div class="body">
+        <p>Contraceptive services, including fitting and removal of devices, and related advice.</p>
+      </div>
+    </details>
+
+    <details class="ra">
+      <summary>Accommodation for persons who require treatment for substance misuse</summary>
+      <div class="body">
+        <p>Residential services providing treatment for drug or alcohol dependency.</p>
+      </div>
+    </details>
+
+    <details class="ra">
+      <summary>Accommodation and nursing or personal care in the further education sector</summary>
+      <div class="body">
+        <p>Residential accommodation with care provided by an institution within the further education sector.</p>
+      </div>
+    </details>
+
+    <details class="ra">
+      <summary>Assessment or medical treatment for persons detained under the Mental Health Act 1983</summary>
+      <div class="body">
+        <p>Assessment and treatment for people detained under the Act, including in independent hospitals.</p>
+      </div>
+    </details>
+
+    <details class="ra">
+      <summary>Termination of pregnancies</summary>
+      <div class="body">
+        <p>Services carrying out terminations, including medical terminations.</p>
+      </div>
+    </details>
+
+    <details class="ra">
+      <summary>Management of supply of blood and blood derived products</summary>
+      <div class="body">
+        <p>Services managing the supply of blood and blood-derived products for transfusion or transplantation.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ================= WHAT CQC REQUIRES ================= -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>What CQC will require from you</h2>
+      <p>Whatever your sector, the application asks for the same things. This is what we build with you.</p>
+    </div>
+
+    <div class="reqs">
+      <div class="req">
+        <span class="n">01</span>
+        <h3>The right legal entity</h3>
+        <p>You register as an individual, a partnership or an organisation. Applying as the wrong entity is one of the most common reasons an application has to be withdrawn and started again, and you don't get the fee back.</p>
+      </div>
+      <div class="req">
+        <span class="n">02</span>
+        <h3>A registered manager</h3>
+        <p>Most services need a manager registered with CQC in their own right, with their own application and their own interview. They must have the right qualifications and experience for the service they'll run.</p>
+      </div>
+      <div class="req">
+        <span class="n">03</span>
+        <h3>A nominated individual</h3>
+        <p>If you're registering as an organisation, you'll need a nominated individual: a director, manager or secretary responsible for supervising how the regulated activity is carried on.</p>
+      </div>
+      <div class="req">
+        <span class="n">04</span>
+        <h3>DBS checks at the right level</h3>
+        <p>Enhanced DBS checks with the correct barred list checks, countersigned through CQC. Certificates obtained through another employer usually won't be accepted.</p>
+      </div>
+      <div class="req">
+        <span class="n">05</span>
+        <h3>A statement of purpose</h3>
+        <p>A formal document setting out your aims, the regulated activities you'll carry on, who you'll provide services to, and where. CQC reads this closely, because it defines what you're registered to do.</p>
+      </div>
+      <div class="req">
+        <span class="n">06</span>
+        <h3>Policies and procedures that match your service</h3>
+        <p>Generic policies downloaded from the internet are visible from a mile away. Yours need to describe how your service actually operates and meet the fundamental standards.</p>
+      </div>
+      <div class="req">
+        <span class="n">07</span>
+        <h3>Fit and proper directors</h3>
+        <p>Directors of registered organisations must meet the fit and proper persons requirement: good character, the right qualifications and skills, physically and mentally able to do the role.</p>
+      </div>
+      <div class="req">
+        <span class="n">08</span>
+        <h3>Evidence you can actually deliver</h3>
+        <p>Financial viability, insurance, recruitment plans, premises, and a business plan that stands up. CQC needs to believe the service will still be running in twelve months.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTORS ================= -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Sectors we register most often</h2>
+      <p>These are the services we see week in, week out. If yours isn't listed, it doesn't mean we can't help. It means we haven't put your sector on a page yet.</p>
+    </div>
+
+    <p class="grp-label">Care in people's homes and communities</p>
+    <div class="sectors">
+
+      <div class="sector">
+        <h3>CQC registration for domiciliary care agencies</h3>
+        <p>Home care delivered in people's own houses and flats: help with washing, dressing, toileting, eating and mobility, plus medication support. Domiciliary care is the single most common new registration in England and one of the most heavily scrutinised, because CQC has seen a lot of agencies register and then fail to trade. Expect close questions on your recruitment plan, your travel time between calls, your on-call arrangements and how you'll fund the first six months before local authority payments start arriving.</p>
+        <span class="act">Regulated activity: personal care</span>
+      </div>
+
+      <div class="sector">
+        <h3>CQC registration for live-in care providers</h3>
+        <p>A carer living in the client's home and providing personal care around the clock. The registration itself sits under the same activity as domiciliary care, but the operational questions are different: working time, rest breaks, accommodation arrangements, safeguarding when there's a single carer with no colleague present, and how you cover a placement when the carer is unwell. Your policies need to answer those specifically rather than reading like a standard homecare pack.</p>
+        <span class="act">Regulated activity: personal care</span>
+      </div>
+
+      <div class="sector">
+        <h3>CQC registration for supported living services</h3>
+        <p>Care and support for people in their own tenancies, most often adults with a learning disability, autistic people, people with mental health needs or physical disabilities. Where you provide personal care, you must register. CQC will assess your application against Right support, right care, right culture, so your model of care, your approach to restrictive practice and how people are supported to have choice and control matter as much as your paperwork.</p>
+        <span class="act">Regulated activity: personal care</span>
+      </div>
+
+      <div class="sector">
+        <h3>CQC registration for complex care at home</h3>
+        <p>Clinical care delivered in the community: tracheostomy and ventilation support, PEG feeding, catheter care, spinal injury packages and continuing healthcare placements. These services usually need more than one regulated activity, because personal care and nursing-led treatment sit under different headings. Getting that combination right at application stage saves you a variation later.</p>
+        <span class="act">Regulated activities: personal care · treatment of disease, disorder or injury</span>
+      </div>
+
+      <div class="sector">
+        <h3>CQC registration for care homes</h3>
+        <p>Residential care homes and nursing homes, where accommodation and care are provided together. Registration covers the location as well as the provider, so the premises themselves come under scrutiny: fire safety, environmental risk, room sizes and adaptations. If you employ registered nurses in their professional capacity, you'll usually need to register for treatment of disease, disorder or injury alongside the accommodation activity.</p>
+        <span class="act">Regulated activities: accommodation with nursing or personal care · treatment of disease, disorder or injury</span>
+      </div>
+
+      <div class="sector">
+        <h3>CQC registration for substance misuse services</h3>
+        <p>Residential rehabilitation and detoxification services for people with drug or alcohol dependency. These registrations attract detailed questions about clinical governance, prescribing arrangements, medical oversight and how you manage risk during withdrawal. A registered manager with directly relevant experience is close to essential.</p>
+        <span class="act">Regulated activity: accommodation for persons who require treatment for substance misuse</span>
+      </div>
+
+    </div>
+
+    <p class="grp-label">Private clinics and aesthetics</p>
+    <div class="sectors">
+
+      <div class="sector">
+        <h3>CQC registration for hair transplant clinics</h3>
+        <p>FUE, FUT, DHI and related surgical hair restoration. Hair transplant clinics involve instruments entering the body, which puts them squarely in scope for surgical procedures. CQC has been increasingly active in this sector following concerns about unregistered clinics, overseas-trained operators and technicians performing procedures without appropriate supervision. Your application needs to be clear about exactly who does what, and what the supervising clinician's role actually is in practice.</p>
+        <span class="act">Regulated activity: surgical procedures</span>
+      </div>
+
+      <div class="sector">
+        <h3>CQC registration for aesthetic clinics</h3>
+        <p>Botulinum toxin, dermal fillers, thread lifts, polynucleotides, skin boosters and similar treatments. Whether you need to register turns on what you're actually doing: treatments involving prescription-only medicines, or provided by or under the supervision of a listed healthcare professional, generally fall within treatment of disease, disorder or injury. Purely cosmetic beauty treatments with no medicine involved usually don't. The line is finer than most clinic owners expect, and it's the single most common question we're asked.</p>
+        <span class="act">Regulated activity: treatment of disease, disorder or injury</span>
+      </div>
+
+      <div class="sector">
+        <h3>CQC registration for IV drip and vitamin infusion clinics</h3>
+        <p>Intravenous vitamin therapy, hydration drips, NAD+ and booster injections, whether delivered from a clinic or as a mobile service. Infusions and injections given by or under the supervision of a healthcare professional bring you into scope. Mobile services raise an extra question CQC will ask directly: where is your registered location, and how do you maintain governance, medicines management and emergency response when treatment happens in a client's living room or a hotel suite.</p>
+        <span class="act">Regulated activity: treatment of disease, disorder or injury</span>
+      </div>
+
+      <div class="sector">
+        <h3>CQC registration for weight loss and weight management clinics</h3>
+        <p>Prescribing services including GLP-1 weight loss injections. This is the fastest-growing area of new registration we see, and a lot of clinics have been trading for months before realising they're in scope. Depending on how the service is structured you may fall under services in slimming clinics, treatment of disease, disorder or injury, or the remote advice activity if you consult online. Prescribing governance and how you verify patient eligibility will be central to the application.</p>
+        <span class="act">Regulated activities: services in slimming clinics · treatment of disease, disorder or injury</span>
+      </div>
+
+      <div class="sector">
+        <h3>CQC registration for private GP and specialist practices</h3>
+        <p>Private general practice, consultant-led clinics, sexual health services, travel clinics and occupational health where clinical treatment is provided. Straightforward in principle, but the application depends heavily on getting your scope right, because practices frequently register for one activity and then discover they've been carrying on another, which means a variation and a delay.</p>
+        <span class="act">Regulated activity: treatment of disease, disorder or injury</span>
+      </div>
+
+      <div class="sector">
+        <h3>CQC registration for dental practices</h3>
+        <p>General and specialist dental practices, including squat practices registering for the first time and existing practices going through a change of ownership. Timing is what catches people out: the registration has to align with your completion date, your lease and your equipment install, and CQC won't be rushed because your contracts have moved. We build the application backwards from your opening date.</p>
+        <span class="act">Regulated activity: treatment of disease, disorder or injury</span>
+      </div>
+
+      <div class="sector">
+        <h3>CQC registration for scanning and ultrasound clinics</h3>
+        <p>Private baby scanning, diagnostic ultrasound, imaging and health screening services. Some diagnostic work is specifically excepted from registration and some isn't, which makes this one of the activities where providers most often get it wrong in both directions: registering unnecessarily, or assuming an exemption that doesn't apply to what they actually offer. Worth checking before you sign a lease.</p>
+        <span class="act">Regulated activity: diagnostic and screening procedures</span>
+      </div>
+
+      <div class="sector">
+        <h3>CQC registration for online and remote clinics</h3>
+        <p>Digital consultation platforms, remote prescribing services, telephone triage and video GP services. Remote providers are held to the same standards as physical clinics, with additional expectations around identity verification, safeguarding when you can't see the patient's environment, and how you handle a patient who deteriorates between consultations.</p>
+        <span class="act">Regulated activity: transport services, triage and medical advice provided remotely</span>
+      </div>
+
+      <div class="sector">
+        <h3>CQC registration for physiotherapy and musculoskeletal clinics</h3>
+        <p>Physiotherapy, osteopathy-adjacent rehabilitation and MSK services. Whether registration is required depends on who provides the treatment and how the service is structured. Treatment provided by or under the supervision of a listed healthcare professional generally falls in scope, though exceptions apply. If you're unsure whether your setup needs registration, it's worth checking before you take on new premises or contracts.</p>
+        <span class="act">Regulated activity: treatment of disease, disorder or injury</span>
+      </div>
+
+      <div class="sector">
+        <h3>CQC registration for sports ground, gym and event medical services</h3>
+        <p>Pitchside medical cover, event medics, stadium treatment rooms and treatment provided inside gyms. Exceptions that previously kept these services outside CQC regulation are being removed, and applications can be made from 7 September 2026. If you hold contracts with clubs, venues or event organisers, they will start asking whether you're registered, often before the second commencement date arrives.</p>
+        <span class="act">Regulated activity: treatment of disease, disorder or injury · new from 2026</span>
+      </div>
+
+      <div class="sector">
+        <h3>CQC registration for independent ambulance and patient transport</h3>
+        <p>Non-emergency patient transport, event ambulance cover and independent ambulance services. Vehicle standards, crew competence, medicines carried on board and how you handle a patient whose condition escalates in transit all feature heavily in the assessment.</p>
+        <span class="act">Regulated activity: transport services, triage and medical advice provided remotely</span>
+      </div>
+
+      <div class="sector">
+        <h3>CQC registration for maternity and midwifery services</h3>
+        <p>Independent midwives, private antenatal and postnatal care, and birth centres. Clinical escalation is the heart of the application: what happens when a home birth needs to transfer, who your named obstetric contact is, and how your indemnity arrangements stand up.</p>
+        <span class="act">Regulated activity: maternity and midwifery services</span>
+      </div>
+
+    </div>
+
+    <div class="maybe-not">
+      <p class="eyebrow">Before you pay anyone</p>
+      <h3>You might not need CQC registration at all</h3>
+      <p>Not every health-adjacent business is regulated, and we'd rather tell you that on a free call than take a fee for an application you didn't need. You generally <strong>don't</strong> need to register if you only provide:</p>
+      <ul>
+        <li>Beauty treatments with no prescription-only medicines involved: facials, non-medical peels, lashes, waxing, most laser and IPL hair removal</li>
+        <li>Housing support or social support only: shopping, cleaning, companionship, help getting to appointments</li>
+        <li>Prompting or supervising medicines, without providing any personal care tasks</li>
+        <li>Personal training, sports massage or nutrition advice with no clinical treatment</li>
+        <li>Talking therapies delivered by a counsellor or psychotherapist who isn't a listed healthcare professional</li>
+      </ul>
+      <p>Other regulators may still apply: local authority licensing, the GDC, the GPhC, the HFEA or Ofsted depending on what you do. If you're unsure, ask us and we'll tell you straight.</p>
+      <a class="btn btn-talk" href="https://calendly.com/smarthealthcompliance/medi-comply-demo-by-shc-1">Check whether you're in scope</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>CQC registration questions we're asked every week</h2>
+      <p>Short answers. If yours isn't here, ask us on the call.</p>
+    </div>
+
+    <details class="ra">
+      <summary>How long does CQC registration take?</summary>
+      <div class="body"><p>CQC's published target is around ten weeks from a complete application, but in practice most providers should plan for longer. Incomplete applications, DBS delays and interview scheduling all add time. The single biggest cause of delay is submitting an application that isn't finished, because the clock effectively restarts each time CQC comes back with questions. Don't sign a lease or a contract on the assumption of a ten-week turnaround.</p></div>
+    </details>
+
+    <details class="ra">
+      <summary>Do I need a registered manager?</summary>
+      <div class="body"><p>Most services do. The registered manager applies to CQC in their own right, has their own interview, and must have the qualifications and experience appropriate to the service they'll run. A small number of services are exempt, typically where the provider is an individual who is personally in day-to-day charge. If you're relying on an exemption, check it before you build your structure around it.</p></div>
+    </details>
+
+    <details class="ra">
+      <summary>Can I register without a clinical background?</summary>
+      <div class="body"><p>Yes. Providers register as a legal entity and don't personally need to be clinicians. What matters is that the people delivering and managing care are appropriately qualified. Plenty of successful registered providers come from business rather than clinical backgrounds. Your registered manager and clinical leads are where the clinical credibility has to sit.</p></div>
+    </details>
+
+    <details class="ra">
+      <summary>What happens if I trade without registering?</summary>
+      <div class="body"><p>Carrying on a regulated activity without registration is a criminal offence, and CQC can prosecute. It also causes commercial damage that outlasts the enforcement: insurers, commissioners, landlords and payment providers all ask about it. If you think you may already be trading in scope, get advice quickly rather than waiting; providers who come forward are in a materially better position than those who are found.</p></div>
+    </details>
+
+    <details class="ra">
+      <summary>How many regulated activities should I register for?</summary>
+      <div class="body"><p>All the ones that describe what you actually do. Each is registered separately and there's no hierarchy between them, though registering for one sometimes removes the need to register for another. Nursing care provided as part of treatment of disease, disorder or injury is the usual example. Under-registering leaves you carrying on an unregistered activity; over-registering brings scrutiny you don't need.</p></div>
+    </details>
+
+    <details class="ra">
+      <summary>What does the registered manager interview involve?</summary>
+      <div class="body"><p>A structured interview with a CQC inspector covering your service model, safeguarding, regulatory knowledge, staffing, governance and how you'd handle specific scenarios. Strong applications still fail here, usually because the manager knows their service but can't connect it to the regulations. That gap is what our <a href="https://cqcmedisolutions.co.uk/services/">interview preparation</a> is built to close.</p></div>
+    </details>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"How long does CQC registration take?","acceptedAnswer":{"@type":"Answer","text":"CQC's published target is around ten weeks from a complete application, but most providers should plan for longer. Incomplete applications, DBS delays and interview scheduling all add time, and the clock effectively restarts each time CQC comes back with questions."}},
+    {"@type":"Question","name":"Do I need a registered manager for CQC registration?","acceptedAnswer":{"@type":"Answer","text":"Most services do. The registered manager applies to CQC in their own right, has their own interview, and must have qualifications and experience appropriate to the service. A small number of services are exempt, typically where the provider is an individual personally in day-to-day charge."}},
+    {"@type":"Question","name":"Can I register with CQC without a clinical background?","acceptedAnswer":{"@type":"Answer","text":"Yes. Providers register as a legal entity and do not personally need to be clinicians. What matters is that the people delivering and managing care are appropriately qualified, which is where the registered manager and clinical leads come in."}},
+    {"@type":"Question","name":"What happens if I provide a regulated activity without registering with CQC?","acceptedAnswer":{"@type":"Answer","text":"Carrying on a regulated activity without registration is a criminal offence and CQC can prosecute. It also causes lasting commercial damage with insurers, commissioners, landlords and payment providers."}},
+    {"@type":"Question","name":"How many regulated activities should I register for?","acceptedAnswer":{"@type":"Answer","text":"All the ones that describe what you actually do. Each regulated activity is registered separately and there is no hierarchy between them, though registering for one sometimes removes the need to register for another."}},
+    {"@type":"Question","name":"What does the CQC registered manager interview involve?","acceptedAnswer":{"@type":"Answer","text":"A structured interview with a CQC inspector covering service model, safeguarding, regulatory knowledge, staffing, governance and scenario questions. Strong applications often fail here because the manager cannot connect their service to the regulations."}}
+  ]
+}
+</script>
+
+<!-- ================= CTA ================= -->
+<section>
+  <div class="wrap">
+    <div class="cta">
+      <h2>Not sure which activities you need? That's the call to book.</h2>
+      <p>Fifteen minutes on the phone will tell you what you need to register for, whether you need a registered manager, and roughly how long it will take. If you don't need us, we'll say so.</p>
+      <div class="btns">
+        <a class="btn btn-buy" href="https://calendly.com/smarthealthcompliance/medi-comply-demo-by-shc-1">Book a free scope call</a>
+        <a class="btn btn-talk" href="https://cqcmedisolutions.co.uk/services/">See services and prices</a>
+      </div>
+    </div>
+
+    <p class="disclaimer">
+      This page is a plain-English guide, not legal advice, and it isn't a substitute for CQC's own guidance. The regulated activities are set out in Schedule 1 of the <a href="https://www.legislation.gov.uk/uksi/2014/2936/contents" rel="noopener">Health and Social Care Act 2008 (Regulated Activities) Regulations 2014</a>, and exceptions and exemptions apply in a number of cases. Always check <a href="https://www.cqc.org.uk/guidance-regulation/providers/registration/scope-registration" rel="noopener">CQC's scope of registration</a> alongside this page, or ask us and we'll check it with you.
+    </p>
+  </div>
+</section>
+
+</body>
+</html>

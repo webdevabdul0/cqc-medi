@@ -37,10 +37,12 @@ export function NotNeedRegistration({
     <section className="bg-gradient-to-r from-brand-purple to-brand-purple-2">
       <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-stretch gap-16 px-6 lg:grid-cols-2 lg:gap-10 lg:px-[100px]">
         <ScrollReveal className="py-20 lg:py-28">
-          <span className="inline-flex items-center gap-2 rounded-full border border-brand-green bg-transparent px-5 py-2.5 text-sm font-bold uppercase tracking-wide text-brand-orange backdrop-blur-md">
-            <Image src="/images/dot-icon.svg" alt="" width={9} height={9} />
-            {badge}
-          </span>
+          {badge && (
+            <span className="inline-flex items-center gap-2 rounded-full border border-brand-green bg-transparent px-5 py-2.5 text-sm font-bold uppercase tracking-wide text-brand-orange backdrop-blur-md">
+              <Image src="/images/dot-icon.svg" alt="" width={9} height={9} />
+              {badge}
+            </span>
+          )}
           <h2 className="mt-8 max-w-[620px] text-3xl font-bold leading-[1.2] text-white sm:text-4xl">
             {heading}
           </h2>

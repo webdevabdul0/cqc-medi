@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Us | CQC MediSolutions</title>
+<meta name="description" content="We don't sell folders of templates. We manage your CQC registration inside the MediComply portal, review your work, complete and submit your forms, and prepare you for the registered manager interview.">
+
+<!--
+====================================================================
+  ABOUT US PAGE. Suggested URL: /about/
+====================================================================
+  Add to main navigation. Link from homepage, /services/ and /sectors/.
+
+  ALSO CONFIRM:
+  - Whether portal access is included in the registration packages
+    or is the separate £99/month subscription
+====================================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#0F2733;
+  --ink-soft:#4C6470;
+  --teal:#0E8478;
+  --teal-deep:#0A655B;
+  --amber:#B4661A;
+  --amber-bg:#FDF3E4;
+  --paper:#F6F8F7;
+  --card:#FFFFFF;
+  --rule:#DCE4E2;
+  --rule-strong:#B9C7C3;
+  --display:"Archivo",system-ui,sans-serif;
+  --body:"Public Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --wrap:1080px;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);
+  font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.narrow{max-width:720px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--teal-deep);margin:0 0 16px}
+section{padding:64px 0 0}
+.sec-head{border-bottom:2px solid var(--ink);padding-bottom:18px;margin-bottom:32px}
+.sec-head h2{font-family:var(--display);font-weight:700;font-size:clamp(25px,3.2vw,33px);
+  letter-spacing:-.018em;margin:0 0 8px;max-width:24ch}
+.sec-head p{margin:0;color:var(--ink-soft);max-width:66ch}
+
+/* hero */
+.hero{padding:76px 0 0}
+.hero h1{font-family:var(--display);font-weight:700;font-size:clamp(33px,5.2vw,54px);
+  line-height:1.04;letter-spacing:-.024em;margin:0 0 22px;max-width:17ch}
+.hero .lede{font-size:20px;color:var(--ink-soft);max-width:63ch;margin:0}
+
+/* story */
+.story p{font-size:18px;margin:0 0 20px;max-width:68ch}
+.story p.big{font-family:var(--display);font-weight:600;font-size:clamp(21px,2.7vw,26px);
+  line-height:1.36;letter-spacing:-.014em;max-width:32ch;color:var(--ink);margin:30px 0}
+
+/* dark panel */
+.panel{background:var(--ink);color:#fff;border-radius:4px;padding:38px 42px;margin-top:36px}
+.panel .eyebrow{color:#7FD3C6}
+.panel h2{font-family:var(--display);font-weight:700;font-size:clamp(22px,3vw,29px);
+  letter-spacing:-.018em;margin:0 0 16px;max-width:26ch}
+.panel p{color:#D4E1E4;max-width:66ch;margin:0 0 14px}
+.panel p:last-child{margin-bottom:0}
+.panel strong{color:#fff}
+
+/* comparison */
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.vs-col{border-radius:4px;padding:28px 30px}
+.vs-old{background:#EDF1F0;border:1px solid var(--rule)}
+.vs-new{background:var(--card);border:1px solid var(--teal);box-shadow:0 0 0 1px var(--teal)}
+.vs-head{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+  margin:0 0 18px;padding-bottom:12px;border-bottom:1px solid var(--rule-strong)}
+.vs-old .vs-head{color:var(--ink-soft)}
+.vs-new .vs-head{color:var(--teal-deep);border-bottom-color:var(--teal)}
+.vs-col ul{list-style:none;margin:0;padding:0;font-size:16px}
+.vs-col li{padding:10px 0 10px 26px;position:relative;line-height:1.5}
+.vs-old li{color:var(--ink-soft)}
+.vs-old li::before{content:"";position:absolute;left:3px;top:18px;width:11px;height:1.5px;
+  background:var(--rule-strong)}
+.vs-new li::before{content:"";position:absolute;left:3px;top:16px;width:8px;height:8px;
+  border-left:2px solid var(--teal);border-bottom:2px solid var(--teal);transform:rotate(-45deg)}
+
+/* flow */
+ol.flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:4px;overflow:hidden}
+ol.flow li{background:var(--card);padding:26px 24px}
+ol.flow li.ours{background:#F1F7F5}
+ol.flow .n{font-family:var(--mono);font-size:12px;color:var(--teal);display:block;margin-bottom:10px}
+ol.flow h3{font-family:var(--display);font-weight:600;font-size:18px;margin:0 0 10px;
+  letter-spacing:-.01em;line-height:1.3}
+ol.flow p{margin:0;color:var(--ink-soft);font-size:15.5px;line-height:1.55}
+
+/* portal contents */
+.pcols{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+.pcol{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:24px}
+.pcol h3{font-family:var(--display);font-weight:600;font-size:18px;margin:0 0 10px;letter-spacing:-.01em}
+.pcol p{margin:0;color:var(--ink-soft);font-size:15.5px;line-height:1.55}
+
+/* principles */
+.prins{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.prin{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:26px 28px}
+.prin h3{font-family:var(--display);font-weight:600;font-size:19px;margin:0 0 10px;letter-spacing:-.01em}
+.prin p{margin:0;color:var(--ink-soft);font-size:16px}
+
+/* cta */
+.cta{background:var(--card);border:1px solid var(--rule);border-radius:4px;
+  padding:44px;margin:64px 0 0;text-align:center}
+.cta h2{font-family:var(--display);font-weight:700;font-size:clamp(24px,3.2vw,32px);
+  margin:0 auto 14px;letter-spacing:-.02em;max-width:22ch}
+.cta p{color:var(--ink-soft);max-width:56ch;margin:0 auto 26px}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{font-family:var(--display);font-weight:600;font-size:15.5px;text-decoration:none;
+  padding:13px 26px;border-radius:3px;display:inline-block;transition:background .18s ease}
+.btn-buy{background:var(--teal);color:#fff}
+.btn-buy:hover{background:var(--teal-deep)}
+.btn-talk{color:var(--ink);border:1px solid var(--rule-strong);padding:12px 22px}
+.btn-talk:hover{border-color:var(--ink)}
+a:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.tail{padding:34px 0 80px;font-size:14.5px;color:var(--ink-soft);max-width:70ch}
+.tail a{color:var(--teal-deep)}
+
+@media (max-width:860px){
+  .vs,.prins,.pcols{grid-template-columns:1fr}
+  ol.flow{grid-template-columns:1fr}
+  .hero{padding:48px 0 0}
+  .panel,.cta{padding:28px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<div class="hero">
+  <div class="wrap">
+    <p class="eyebrow">About us</p>
+    <h1>We don't sell folders. We get providers registered.</h1>
+    <p class="lede">There are plenty of companies who will sell you a library of policies and wish you luck. We built CQC MediSolutions because that model leaves the hardest part of registration exactly where it started: with you, at eleven at night, wondering whether what you've written is good enough.</p>
+
+  </div>
+</div>
+
+<!-- ================= STORY ================= -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Why we exist</h2>
+    </div>
+
+    <div class="story">
+      <p>Most people applying to CQC are not compliance professionals. They are nurses opening their first agency, clinicians going independent, families setting up a supported living service because they couldn't find one good enough for someone they love. They are extremely good at the thing they want to do, and completely new to the thing standing between them and doing it.</p>
+
+      <p>What the market offered them was a document library. Two hundred templates, no order, no explanation of which ones applied, and no one to ask. So they filled them in as best they could, submitted, and waited months to find out they'd got it wrong.</p>
+
+      <p class="big">The documents were never the difficult part. The judgement was.</p>
+
+      <p>We built a different model. Your application runs inside the MediComply portal as a simple task list. Your templates are already there, written for your sector. You upload what we ask for, and an experienced consultant reviews every piece of it, tells you what's wrong and why, and improves it with you. Then we complete the CQC forms, submit them, and prepare you properly for the registered manager interview.</p>
+
+      <p>You always know what's outstanding, who's holding it, and what happens next. That is the whole difference.</p>
+    </div>
+
+    <div class="panel">
+      <p class="eyebrow">What that means in practice</p>
+      <h2>Nothing reaches CQC without a consultant having read it first.</h2>
+      <p>Every policy, every form, every piece of evidence is checked by someone who has been through this process many times before, against the standard CQC will actually apply. Not a checklist. A person who knows what a weak answer looks like.</p>
+      <p><strong>If your application is not ready, we will tell you before CQC does.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMPARISON ================= -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>What sets us apart</h2>
+      <p>Both approaches end with a set of documents. Only one of them ends with somebody who has checked them.</p>
+    </div>
+
+    <div class="vs">
+      <div class="vs-col vs-old">
+        <p class="vs-head">Buying a document library</p>
+        <ul>
+          <li>A folder of templates and good luck</li>
+          <li>You work out which documents apply to your service</li>
+          <li>You second-guess whether you've filled them in correctly</li>
+          <li>You complete and submit the CQC forms yourself</li>
+          <li>You chase CQC when they come back with questions</li>
+          <li>A list of likely interview questions to memorise</li>
+          <li>Nobody checks your work before CQC sees it</li>
+        </ul>
+      </div>
+      <div class="vs-col vs-new">
+        <p class="vs-head">Working with CQC MediSolutions</p>
+        <ul>
+          <li>Your application managed inside the MediComply portal</li>
+          <li>A simplified task list telling you exactly what to do next</li>
+          <li>Templates already loaded and written for your sector</li>
+          <li>We review everything you upload, feed back, and improve it with you</li>
+          <li>We complete the CQC forms and submit the application for you</li>
+          <li>A full A to Z interview programme, not a question list</li>
+          <li>Every document validated by an experienced CQC consultant</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW WE WORK ================= -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>How we work</h2>
+      <p>Six steps, one place. The shaded ones are the parts a template company cannot do for you.</p>
+    </div>
+
+    <ol class="flow">
+      <li>
+        <span class="n">STEP 01</span>
+        <h3>Your task list appears</h3>
+        <p>Built around your service and your regulated activities, in order, in plain English. Everything on it is something you actually have to do.</p>
+      </li>
+      <li>
+        <span class="n">STEP 02</span>
+        <h3>Download your templates</h3>
+        <p>Already loaded and written for your sector. You edit a document that fits your service instead of adapting a generic one and hoping.</p>
+      </li>
+      <li>
+        <span class="n">STEP 03</span>
+        <h3>Upload what we've asked for</h3>
+        <p>Completed templates, ID, DBS, insurance, qualifications, financial evidence. One place, not a chain of email attachments.</p>
+      </li>
+      <li class="ours">
+        <span class="n">STEP 04</span>
+        <h3>We review and feed back</h3>
+        <p>A consultant reads every item, tells you what's wrong and why it matters, then improves it with you rather than sending it back with a red mark.</p>
+      </li>
+      <li class="ours">
+        <span class="n">STEP 05</span>
+        <h3>We complete and submit</h3>
+        <p>We finish the CQC forms, check them against your evidence, and submit. You are not left staring at a government form trying to decode a question.</p>
+      </li>
+      <li class="ours">
+        <span class="n">STEP 06</span>
+        <h3>We prepare you for interview</h3>
+        <p>An A to Z programme with mock interviews and honest feedback, because strong applications still fail at this stage.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= ONGOING COMPLIANCE ================= -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Already registered? Staying registered is the harder part.</h2>
+      <p>Registration is one day. Compliance is every day after it. MediComply is where your service runs once CQC has said yes.</p>
+    </div>
+
+    <div class="story">
+      <p>Most providers don't fall down because they never had the right documents. They fall down because eighteen months later the audits haven't been done, the risk assessments are out of date, three staff are overdue on training, and nobody can find the evidence when an inspector asks for it. The paperwork existed. Nobody was managing it.</p>
+      <p>MediComply turns your ongoing compliance into a running list of tasks with dates against them, so the work is visible before it becomes a problem rather than after.</p>
+    </div>
+
+    <div class="pcols">
+      <div class="pcol">
+        <h3>Task management</h3>
+        <p>Everything your service has to do, scheduled and assigned, with a clear view of what's due, what's overdue and who owns it. Nothing depends on somebody remembering.</p>
+      </div>
+      <div class="pcol">
+        <h3>Digital audits</h3>
+        <p>Over 40 audits mapped to the CQC assessment framework, completed on the app as you walk the service. Results are stored and dated, so your evidence builds itself.</p>
+      </div>
+      <div class="pcol">
+        <h3>Risk assessments and risk register</h3>
+        <p>A full library of risk assessments, reviewed on schedule, feeding automatically into a risk register that populates your action plans rather than sitting in a folder.</p>
+      </div>
+      <div class="pcol">
+        <h3>Policies that stay current</h3>
+        <p>Over 100 compliance templates, forms and checklists, kept in one place and updated as guidance changes, so you aren't working from a version somebody downloaded two years ago.</p>
+      </div>
+      <div class="pcol">
+        <h3>Staff training and CPD</h3>
+        <p>A CPD course library with progress tracked per member of staff, so you can show at a glance who is compliant and who needs chasing.</p>
+      </div>
+      <div class="pcol">
+        <h3>HR and rota management</h3>
+        <p>Shifts, availability and staffing records in the same system as your compliance, because safe staffing is something CQC will ask you to evidence.</p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <p class="eyebrow">The point of all of it</p>
+      <h2>You should never have to prepare for an assessment.</h2>
+      <p>If the audits are done, the risk assessments are current and the training is tracked, an inspection is a conversation about work you have already been doing. The scramble in the fortnight before an assessment is a symptom of compliance living in folders instead of in a system.</p>
+      <p><strong>We want you inspection ready on an ordinary Tuesday, not just when you know they're coming.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY PROVIDERS CHOOSE US ================= -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>What makes our service different</h2>
+      <p>Three things, and none of them are the documents.</p>
+    </div>
+
+    <div class="prins">
+      <div class="prin">
+        <h3>We simplify the process</h3>
+        <p>Everything runs through one dashboard. A task list instead of a document dump, your progress visible at any moment, and no wondering what happens next or who is holding things up. Registration and ongoing compliance in the same place, so nothing has to be rebuilt once you're approved.</p>
+      </div>
+      <div class="prin">
+        <h3>We are healthcare people</h3>
+        <p>Our team are healthcare professionals and CQC compliance consultants with real experience of working inside health and care services. That matters when you're asked why a policy exists rather than just whether you have one. We have sat on both sides of this.</p>
+      </div>
+      <div class="prin">
+        <h3>We have done this hundreds of times</h3>
+        <p>We have supported hundreds of providers through registration and ongoing compliance, across domiciliary care, supported living, aesthetics, IV clinics, hair transplant, scanning and more. Whatever your application throws up, it is unlikely to be the first time we have seen it.</p>
+      </div>
+      <div class="prin">
+        <h3>You get a consultant, not a portal login</h3>
+        <p>The software is how the work is organised. The judgement comes from a person who reads what you have written and tells you honestly whether it will stand up.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRINCIPLES ================= -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>How we work with people</h2>
+      <p>Four things we hold to, including the ones that cost us money.</p>
+    </div>
+
+    <div class="prins">
+      <div class="prin">
+        <h3>We tell you if you don't need us</h3>
+        <p>Plenty of businesses that contact us are not in scope for CQC registration at all. We say so on the first call rather than taking a fee for an application nobody needed.</p>
+      </div>
+      <div class="prin">
+        <h3>We don't promise outcomes</h3>
+        <p>No consultancy can guarantee a registration decision, and anyone who tells you otherwise is selling you something. What we can promise is that CQC will never reject your application for something avoidable.</p>
+      </div>
+      <div class="prin">
+        <h3>You keep everything</h3>
+        <p>The policies and documents built during your application are yours, in editable format. You are not renting your own compliance from us.</p>
+      </div>
+      <div class="prin">
+        <h3>We say when you're not ready</h3>
+        <p>If your interview answers are weak or your evidence is thin, you will hear it from your consultant first. That conversation is uncomfortable and it is the entire point of paying for one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section>
+  <div class="wrap">
+    <div class="cta">
+      <h2>Talk to the consultant who'd handle your file.</h2>
+      <p>Fifteen minutes will tell you what you need to register for, what the process looks like for your service, and roughly how long it will take. If you don't need us, we'll say so.</p>
+      <div class="btns">
+        <a class="btn btn-buy" href="https://calendly.com/smarthealthcompliance/medi-comply-demo-by-shc-1">Book a free scope call</a>
+        <a class="btn btn-talk" href="https://cqcmedisolutions.co.uk/services/">See services and prices</a>
+      </div>
+    </div>
+
+    <p class="tail">
+      Not sure whether your service needs registering at all? Start with <a href="https://cqcmedisolutions.co.uk/sectors/">the regulated activities and who needs to register</a>.
+    </p>
+  </div>
+</section>
+
+</body>
+</html>

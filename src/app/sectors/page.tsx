@@ -26,7 +26,7 @@ export default function SectorsPage() {
         <ActivitiesSection />
         <ChecklistSection />
         <SectorDeepDives />
-        <NotNeedRegistration />
+        <NotNeedRegistration badge="" />
         <FAQSection />
         <CTA heading="Not sure which activities you need? That's the call to book." />
       </main>
