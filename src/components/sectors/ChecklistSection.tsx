@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ScrollRevealStagger } from "../ScrollReveal";
+import { ScrollReveal, ScrollRevealStagger } from "../ScrollReveal";
 import { SCOPE_CHECKLIST } from "./data";
 
 export function ChecklistSection() {
@@ -14,7 +14,14 @@ export function ChecklistSection() {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-[rgba(83,1,114,0.24)] to-[rgba(83,1,114,0.53)]" />
       <div className="relative mx-auto max-w-[1440px] px-6 lg:px-[100px]">
-        <ScrollRevealStagger className="flex flex-wrap justify-center gap-6">
+        <ScrollReveal className="mx-auto max-w-[620px] text-center">
+          <p className="text-base leading-[1.3] text-white/85">
+            Eight things CQC will check are in place before they&apos;ll
+            register your application, regardless of which regulated
+            activity you carry on.
+          </p>
+        </ScrollReveal>
+        <ScrollRevealStagger className="mt-16 flex flex-wrap justify-center gap-6">
           {SCOPE_CHECKLIST.map((item) => (
             <div
               key={item.number}
