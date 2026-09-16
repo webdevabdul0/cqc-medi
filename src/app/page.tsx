@@ -1,4 +1,5 @@
 import { AlreadyRegistered } from "@/components/AlreadyRegistered";
+import { PopupWrapper } from "@/components/PopupWrapper";
 import { Comparison } from "@/components/Comparison";
 import { ConsultantReview } from "@/components/ConsultantReview";
 import { CTA } from "@/components/CTA";
@@ -30,6 +31,7 @@ export default function Home() {
         <CTA />
       </main>
       <Footer />
+      <PopupWrapper />
     </>
   );
 }

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Quicksand } from "next/font/google";
-import { PopupWrapper } from "@/components/PopupWrapper";
 import "./globals.css";
 
 const quicksand = Quicksand({
@@ -20,7 +19,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className={`${quicksand.variable} antialiased`}>
       <body className="min-h-full flex flex-col font-sans bg-white">
         {children}
-        <PopupWrapper />
       </body>
     </html>
   );
