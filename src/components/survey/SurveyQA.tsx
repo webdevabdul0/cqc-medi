@@ -73,14 +73,6 @@ export function SurveyQA() {
           limited.
         </p>
 
-        <div className="mt-6 flex flex-wrap items-baseline gap-3 rounded-xl border border-white/30 px-4 py-3 text-sm text-white">
-          <span className="font-bold uppercase tracking-wide text-brand-green">
-            Next session
-          </span>
-          <span className="font-semibold">{longDate(session)}</span>
-          <span className="text-white/70">2:00pm to 4:00pm</span>
-        </div>
-
         <p className="mt-6 max-w-[550px] border-l-2 border-brand-green pl-4 text-sm leading-[1.3] text-white/70">
           Before you pay anyone for CQC support, meet them. If someone has
           cold-called you claiming to be from CQC or promising a fast-tracked
