@@ -16,14 +16,14 @@ export default function EnquiryFormPage() {
           <h1 className="mb-10 text-center text-4xl font-bold text-white">
             Enquiry Form
           </h1>
-          <iframe
-            src="https://app.flossly.ai/lead-form/e686a9fc4cd5f1cc39d6dfe7929d555eccdb51bf4535b85c8398a5500365c5d3"
-            width="100%"
-            height="650"
-            frameBorder="0"
-            style={{ border: "none", borderRadius: "12px" }}
-          />
         </div>
+        <iframe
+          src="https://app.flossly.ai/lead-form/e686a9fc4cd5f1cc39d6dfe7929d555eccdb51bf4535b85c8398a5500365c5d3"
+          width="100%"
+          height="650"
+          frameBorder="0"
+          style={{ border: "none" }}
+        />
       </main>
       <Footer />
     </>
