@@ -2,19 +2,19 @@ export const FLOSSLY_WEBINAR_SRC =
   "https://app.flossly.ai/lead-form/f39fac931095d88fb12e2f8062f6bbfb298c52e5aa458712c3e5275b2f7f5d8d";
 
 export const nextWebinar = {
-  part: 2,
+  part: 3,
   total: 6,
-  title: "The Silent Application Killers Nobody Warns You About",
+  title: "Inspection-Ready: The Premises & Paperwork Checklist",
   description:
-    "The small, quiet things that sink an application — vague wording, thin evidence, a Statement of Purpose that doesn't match the form.",
-  date: "Wednesday 10 September 2026",
-  isoDate: "2026-09-10T13:00:00+01:00",
+    "What CQC expects of your location and the document pack behind it, from floor plans and IPC through to Schedule 3 files.",
+  date: "Thursday 15 October 2026",
+  isoDate: "2026-10-15T13:00:00+01:00",
   time: "1:00pm – 1:30pm",
   format: "Zoom · 20 min + Q&A",
   host: { name: "Victoria Yannagas", org: "CQC MediSolutions", initials: "VY" },
-  seatsLeft: 38,
+  seatsLeft: 22,
   seatsTotal: 60,
-  registerLabel: "Part 2 — The Silent Application Killers Nobody Warns You About, Wed 10 Sep 2026",
+  registerLabel: "Part 3 — Inspection-Ready: The Premises & Paperwork Checklist, Thu 15 Oct 2026",
 };
 
 export type Stage = "before" | "apply" | "after";

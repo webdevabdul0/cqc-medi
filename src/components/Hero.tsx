@@ -8,10 +8,12 @@ import { OutlineButton, PrimaryButton } from "./Buttons";
 
 const APPLY_FORM = "https://app.flossly.ai/lead-form/8507123ef51ba69714224a44386168c6ea539286f1b0411811acc578e3b40a6c";
 const BOOK_CALL_HREF = "https://calendly.com/smarthealthcompliance/medi-comply-demo-by-shc-1";
+const YOUTUBE_EMBED = "https://www.youtube.com/embed/dhuO4gaKMvY?autoplay=1";
 
 export function Hero() {
   const rootRef = useRef<HTMLElement>(null);
   const [formOpen, setFormOpen] = useState(false);
+  const [videoOpen, setVideoOpen] = useState(false);
 
   useEffect(() => {
     const root = rootRef.current;
@@ -86,9 +88,13 @@ export function Hero() {
               priority
             />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[rgba(32,20,73,0.84)]" />
-            <div className="absolute inset-0 flex items-center justify-center">
+            <button
+              onClick={() => setVideoOpen(true)}
+              className="absolute inset-0 flex items-center justify-center"
+              aria-label="Play video"
+            >
               <Image src="/images/hero-badge.svg" alt="" width={86} height={86} />
-            </div>
+            </button>
             <div className="absolute bottom-8 left-1/2 w-[85%] -translate-x-1/2 text-center">
               <p className="text-sm font-semibold leading-[1.3] text-white">
                 See how MediComply streamlines compliance with integrated audits, HR,
@@ -102,6 +108,34 @@ export function Hero() {
 
     {formOpen && (
       <FlosslyModal src={APPLY_FORM} onClose={() => setFormOpen(false)} />
+    )}
+
+    {videoOpen && (
+      <div
+        className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+        onClick={() => setVideoOpen(false)}
+      >
+        <div
+          className="relative w-full max-w-[900px]"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <button
+            onClick={() => setVideoOpen(false)}
+            className="absolute -right-3 -top-3 z-10 flex size-8 items-center justify-center rounded-full bg-white text-black shadow-lg"
+            aria-label="Close video"
+          >
+            ✕
+          </button>
+          <div className="aspect-video w-full overflow-hidden rounded-[16px]">
+            <iframe
+              src={YOUTUBE_EMBED}
+              allow="autoplay; fullscreen"
+              allowFullScreen
+              className="h-full w-full"
+            />
+          </div>
+        </div>
+      </div>
     )}
     </>
   );
