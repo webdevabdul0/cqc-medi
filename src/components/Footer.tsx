@@ -77,7 +77,7 @@ export function Footer() {
         <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-between gap-4 px-6 text-sm text-white/60 sm:flex-row lg:px-[100px]">
           <p>© {new Date().getFullYear()} CQC MediSolutions. All rights reserved.</p>
           <div className="flex gap-4">
-            <Link href="#" className="hover:text-white">
+            <Link href="/privacy-policy" className="hover:text-white">
               Privacy Policy
             </Link>
             <Link href="#" className="hover:text-white">
