@@ -1,7 +1,18 @@
+"use client";
+
 import Image from "next/image";
-import { PrimaryButton } from "../Buttons";
+import { useEffect } from "react";
 
 export function ThanksHero({ fileUrl }: { fileUrl: string }) {
+  useEffect(() => {
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.download = "";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  }, [fileUrl]);
+
   return (
     <section className="bg-white pb-20 pt-36 lg:pb-28 lg:pt-56">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-[100px]">
@@ -14,7 +25,13 @@ export function ThanksHero({ fileUrl }: { fileUrl: string }) {
               Click below to download you free resource file
             </p>
             <div className="mt-8">
-              <PrimaryButton href={fileUrl}>Download free</PrimaryButton>
+              <a
+                href={fileUrl}
+                download
+                className="inline-flex items-center justify-center rounded-xl bg-brand-green px-[30px] py-4 text-base font-bold text-[#fbfbfb] transition-opacity hover:opacity-90"
+              >
+                Download free
+              </a>
             </div>
           </div>
 

@@ -28,19 +28,18 @@ export default function PrivacyPolicyPage() {
           <section className="mt-12">
             <h2 className={SECTION_HEADING}>1. Who we are</h2>
             <p className={BODY}>
-              CQC MediSolutions is a trading name of [Registered company name], a company
-              registered in England and Wales (company number [number]), registered office
-              [address]. We are the data controller for the personal data described in this
-              policy and are registered with the Information Commissioner&apos;s Office (ICO)
-              under number [ICO number].
+              CQC MediSolutions is a trading name of CQC MediSolutions Limited, a company
+              registered in England and Wales (company number 16312683), registered office
+              138a Alwoodley Lane, Leeds, United Kingdom, LS17 7PP. We are the data controller
+              for the personal data described in this policy.
             </p>
             <p className={BODY}>
               CQC MediSolutions is an independent consultancy. We are not part of, or endorsed
               by, the Care Quality Commission.
             </p>
             <p className={BODY}>
-              Questions about this policy or your data: email [privacy email], call 0800 689
-              1061, or write to us at the address above.
+              Questions about this policy or your data: email cqcmedisolutions@gmail.com, call
+              0800 689 1061, or write to us at the address above.
             </p>
           </section>
 
@@ -184,28 +183,6 @@ export default function PrivacyPolicyPage() {
                     <td className={TD}>Zapier</td>
                     <td className={TD}>Passing lead form details into our CRM</td>
                   </tr>
-                  <tr>
-                    <td className={TD}>[CRM provider]</td>
-                    <td className={TD}>Managing enquiries and client records</td>
-                  </tr>
-                  <tr>
-                    <td className={TD}>
-                      [Email and calendar provider, e.g. Google Workspace or Microsoft 365]
-                    </td>
-                    <td className={TD}>Email and scheduling</td>
-                  </tr>
-                  <tr>
-                    <td className={TD}>[Webinar platform]</td>
-                    <td className={TD}>Hosting webinars</td>
-                  </tr>
-                  <tr>
-                    <td className={TD}>[Payment provider] and [accounting software]</td>
-                    <td className={TD}>Taking payments and keeping accounts</td>
-                  </tr>
-                  <tr>
-                    <td className={TD}>[Website host]</td>
-                    <td className={TD}>Hosting our website</td>
-                  </tr>
                 </tbody>
               </table>
             </div>
@@ -239,11 +216,11 @@ export default function PrivacyPolicyPage() {
                 <tbody>
                   <tr>
                     <td className={TD}>Enquiries that don&apos;t become clients</td>
-                    <td className={TD}>[24 months] after our last contact</td>
+                    <td className={TD}>24 months after our last contact</td>
                   </tr>
                   <tr>
                     <td className={TD}>Client records</td>
-                    <td className={TD}>[6 years] after the service ends</td>
+                    <td className={TD}>6 years after the service ends</td>
                   </tr>
                   <tr>
                     <td className={TD}>Invoices and accounting records</td>
@@ -251,7 +228,7 @@ export default function PrivacyPolicyPage() {
                   </tr>
                   <tr>
                     <td className={TD}>Webinar registrations</td>
-                    <td className={TD}>[12 months] after the event</td>
+                    <td className={TD}>12 months after the event</td>
                   </tr>
                   <tr>
                     <td className={TD}>Marketing preferences and opt-outs</td>
@@ -312,7 +289,7 @@ export default function PrivacyPolicyPage() {
               <strong>Changes:</strong> we may update this policy. The latest version will always
               be on this page.
             </p>
-            <p className={BODY}>Last updated: [date]</p>
+            <p className={BODY}>Last updated: 10 November 2026</p>
           </section>
         </div>
       </main>

@@ -16,16 +16,8 @@ export function ResourceGateHero({
 
   useEffect(() => {
     const handler = (e: MessageEvent) => {
-      if (!e.origin.includes("flossly.ai")) return;
-      const d = e.data as Record<string, unknown> | null;
-      if (!d) return;
-      const isSubmit =
-        d.type === "form_submitted" ||
-        d.type === "submission" ||
-        d.event === "submitted" ||
-        d.event === "submission_created" ||
-        d.submitted === true;
-      if (isSubmit) {
+      if (e.origin !== "https://app.flossly.ai") return;
+      if (e.data?.type === "flossly:form-submitted") {
         router.push(`/resources/${resource.slug}/thanks`);
       }
     };
@@ -60,14 +52,26 @@ export function ResourceGateHero({
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-[40px] bg-brand-lilac">
-            <iframe
-              src={RESOURCE_FORM}
-              title="Get your free resource"
-              className="min-h-[600px] w-full border-0"
-              loading="lazy"
-              allow="payment"
-            />
+          <div>
+            <div className="overflow-hidden rounded-[40px] bg-brand-lilac">
+              <iframe
+                src={RESOURCE_FORM}
+                title="Get your free resource"
+                className="min-h-[600px] w-full border-0"
+                loading="lazy"
+                allow="payment"
+              />
+            </div>
+            <div className="mt-6 rounded-[20px] border border-[#cecece] bg-white p-6 text-center">
+              <p className="text-sm leading-[1.3] text-black/70">Already submitted the form?</p>
+              <a
+                href={`/downloads/${resource.slug}.pdf`}
+                download
+                className="mt-4 inline-flex items-center justify-center rounded-xl bg-brand-green px-[30px] py-4 text-base font-bold text-[#fbfbfb] transition-opacity hover:opacity-90"
+              >
+                Download free
+              </a>
+            </div>
           </div>
         </div>
       </div>

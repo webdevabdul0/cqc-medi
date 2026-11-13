@@ -22,9 +22,7 @@ export default async function ResourceThanksPage({
   const resource = RESOURCE_CARDS.find((r) => r.slug === slug);
   if (!resource) notFound();
 
-  // TODO: replace with the real hosted file URL for this resource once the
-  // PDFs/checklists are uploaded (e.g. from a CMS field on `resource`).
-  const fileUrl = "#";
+  const fileUrl = `/downloads/${resource.slug}.pdf`;
 
   return (
     <>
